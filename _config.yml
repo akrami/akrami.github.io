@@ -9,7 +9,8 @@ twitter_username: xarax
 github_username:  akrami
 
 # Build settings
+encoding: utf-8
 markdown: kramdown
-highlighter: pygments
+highlighter: rouge
 safe: true
 lsi: false
