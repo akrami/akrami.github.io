@@ -43,6 +43,7 @@
     }
 
     @include media-query($on-palm) {
+        float: right;
         position: absolute;
         top: 9px;
         right: 30px;
@@ -83,6 +84,9 @@
         .page-link {
             display: block;
             padding: 5px 10px;
+            &:not(:first-child) {
+                margin-right: 0;
+            }
         }
     }
 }
@@ -234,4 +238,8 @@
             font-size: 18px;
         }
     }
+}
+
+.rss-subscribe{
+    text-align: left;
 }
