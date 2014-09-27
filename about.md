@@ -2,10 +2,8 @@
 layout: page
 title: درباره من
 permalink: /about/
+published: true
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](http://jekyllrb.com/)
-
-You can find the source code for the Jekyll new theme at: [github.com/jglovier/jekyll-new](https://github.com/jglovier/jekyll-new)
-
-You can find the source code for Jekyll at [github.com/jekyll/jekyll](https://github.com/jekyll/jekyll)
+<img src="{{ site.base_url }}/img/me.jpg" class="pull-right">
+علیرضا اکرمی هستم، یک خردادی. فارغ التحصیل رشته تجارت الکترونیک از دانشگاه خواجه نصیر. علاقه فراوانی به طراحی و برنامه نویسی وب دارم و همیشه سعی کردم مطالبی که دنبالش هستم و به دست میارم رو به اشتراک بزارم. به همین دلیل شروع به وبلاگ نویسی کردم. قبلا در [rtlweb.ir](http://rtlweb.ir) مطلب می نوشتم ولی بعد از اون تصمیم گرفتم مطالب جدیدم رو اینجا به اشتراک بزارم.

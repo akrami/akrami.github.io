@@ -4,6 +4,8 @@ title:  "پست آزمایشی"
 date:   2014-08-26 14:51:47
 fa-date: شنبه 28 مرداد 1393
 categories: jekyll update
+tags: test about new start
+published: false
 ---
 
 سلام به همگی
