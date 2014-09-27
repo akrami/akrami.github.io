@@ -2,9 +2,13 @@
  * Site header
  */
 .site-header {
-    border-top: 5px solid $grey-color-dark;
+    //border-top: 5px solid $grey-color-dark;
     border-bottom: 1px solid $grey-color-light;
     min-height: 56px;
+    padding-top: 10px;
+    background-image: url(../img/border.jpg);
+    background-repeat: repeat-x;
+    background-position: top;
 
     // Positioning context for the mobile navigation icon
     position: relative;
@@ -22,11 +26,16 @@
     &:visited {
         color: $grey-color-dark;
     }
+    &:hover{
+        text-decoration: none;
+        color: $brand-color;
+    }
 }
 
 .site-nav {
     //float: right;
     line-height: 56px;
+    margin-top: 10px;
 
     .menu-icon {
         display: none;
@@ -241,5 +250,6 @@
 }
 
 .rss-subscribe{
-    text-align: left;
+    vertical-align: middle;
+    margin-bottom: 15px;
 }

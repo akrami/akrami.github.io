@@ -1,12 +1,15 @@
 ---
 layout: post
-title:  "Test Post!"
+title:  "پست آزمایشی"
 date:   2014-08-26 14:51:47
+fa-date: شنبه 28 مرداد 1393
 categories: jekyll update
 ---
 
-Hello everyone
-this post is for testing github update interval
+سلام به همگی
+
+این پست یک پست آزمایشی می باشد و حاوی هیچ گونه متنی نیست
+سلام
 
 {% highlight html %}
 <b>hello</b>
