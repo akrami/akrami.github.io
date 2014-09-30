@@ -2,7 +2,7 @@
 layout: post
 title:  "سلامی جدید"
 date:   2014-09-27 14:51:47
-fa-date: شنبه 5 مهر 1393
+fa-date: شنبه ۵ مهر ۱۳۹۳
 categories: general
 published: true
 tags: سلام jekyll github چالش
