@@ -47,13 +47,13 @@ gem install wdm
 {% endhighlight %}
 
 حالا برنامه ما به طور کامل نصب شده و ما می تونیم ازش استفاده کنیم. بطور مثال کدهای زیر یک وبسایت demo در شاخه <span class="inline-code">D:\\</span> میسازه و بعد اون رو برای مشاهده روی آدرس <span class="inline-code">http://localhost:4000</span> قابل دسترس می کنه.
-{% highlight jekyll %}
+{% highlight ruby %}
 jekyll new demo
 cd demo
 jekyll serve -w
 {% endhighlight %}
 اگر در مرحله سوم با اجرای کد <span class="inline-code">jekyll serve -w</span> با مشکل برخوردید باید تنظیمات برنامه رو تغییر بدین. به مسیر <span class="inline-code">D:\demo</span> رفته و فایل <span class="inline-code">_config.yml</span> رو با notepad باز کنید. در این فایل تنظیمات وبسایت demo ذخیره شده. به آخر فایل خط زیر رو اضافه کنید که نشون میده ما میخوایم از rouge استفاده کنیم.
-{% highlight jekyll %}
+{% highlight html %}
 highlighter: rouge
 {% endhighlight %}
 jekyll تنظیمات بسیار زیادی داره که می تونید تموم اونها رو توی وبسایت رسمی [jekyll](http://jekyllrb.com) مشاهده کنید. تو قسمت documentation این سایت تمام ساختار jekyll به سادگی توضیح داده شده که می تونید از اونها استفاده کنید.
