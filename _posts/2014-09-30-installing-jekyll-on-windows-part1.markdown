@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "آموزش نصب jekyll بر روی ویندوز"
+title:  "آموزش نصب jekyll بر روی ویندوز (قسمت اول)"
 date:   2014-09-30 21:00:00
 fa-date: چهارشنبه ۹ مهر ۱۳۹۳
 categories: tutorial
