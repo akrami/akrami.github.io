@@ -12,7 +12,6 @@ facebook_username: xarax
 # Build settings
 encoding: utf-8
 markdown: kramdown
-highlighter: pygments
 safe: true
 lsi: false
 permalink: none
