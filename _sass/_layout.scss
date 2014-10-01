@@ -1,6 +1,24 @@
 /**
  * Site header
  */
+
+.clearfix{
+    clear: both;
+}
+
+.container.centeralized{
+    width: 100%;
+    text-align: center;
+}
+
+.inline-code{
+    font-family: Consolas;
+    padding: 2px 5px;
+    background-color: #DEDEFF;
+    border-radius: 5px;
+    direction: ltr;
+}
+
 .site-header {
     //border-top: 5px solid $grey-color-dark;
     border-bottom: 1px solid $grey-color-light;
@@ -31,8 +49,7 @@
         color: $brand-color;
     }
     img{
-        background-color: #eee;
-        padding: 2px;
+        border: none;
     }
 }
 
@@ -190,9 +207,10 @@
 .post-list {
     margin-left: 0;
     list-style: none;
-
-    > li {
+    
+    > li:not(:last-child) {
         margin-bottom: $spacing-unit;
+        border-bottom: 1px solid #ddd;
     }
 }
 
@@ -259,12 +277,9 @@
 .post-more{
     position: relative;
     float: left;
-    border: 1px solid #ccc;
+    border: 1px solid #ddd;
     border-radius: 5px;
     padding: 5px 10px;
-    &::after{
-        clear: left;
-    }
     &:hover{
         text-decoration: none;
         background-color: #eee;
@@ -279,6 +294,7 @@
 .pull-right{
     float: right;
 }
+
 .tags {
   list-style: none;
   margin: 0;
