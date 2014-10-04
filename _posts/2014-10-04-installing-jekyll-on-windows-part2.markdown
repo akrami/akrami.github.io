@@ -14,6 +14,8 @@ tags: آموزش وبسایت jekyll tutorial windows ویندوز github گیت
 در قسمت دوم آموزش نصب jekyll، نحوه اتصال این برنامه به یک صفحه github و طریقه پیکربندی اون رو توضیح خواهم داد. در اینجا نکته ای که بسیار اهمیت داره نحوه پیکربندی برنامه تو ویندوز هست.
 چون اجرای jekyll روی ویندوز با تنظیمات پیش فرض github به دلیل ناسازگاری افزونه هایی مثل pygments پیغام خطا میده.
 
+<a href="http://iakrami.ir/tutorial/installing-jekyll-on-windows-part1.html">آموزش نصب jekyll بر روی ویندوز (قسمت اول)</a>
+
 <h1>ایجاد حساب github</h1>
 بعد از ثبت نام در وبسایت [github](http://github.com)، در منو بالا New Repository رو انتخاب کرده و یک [مخزن](http://git-scm.com/book/en/Getting-Started-Git-Basics) ایجاد کنید. در قسمت نام مخزن، عبارت <span class="inline-code">username.github.io</span> رو وارد کنید (بجای username نام کاربری خودتون رو بنویسید). ما بقی تنظیمات را در حالت پیش فرض قرار دهید.
 
@@ -48,5 +50,3 @@ github: [Repository metadata]
 </ul>
 
 در پست بعد اتصال دامنه به github رو آموزش خواهم داد. لطفا نظرات و سوالاتتون رو در مورد این پست در قسمت نظرات عنوان کنید.
-
-<a href="http://iakrami.ir/tutorial/installing-jekyll-on-windows-part1.html">آموزش نصب jekyll بر روی ویندوز (قسمت اول)</a>
