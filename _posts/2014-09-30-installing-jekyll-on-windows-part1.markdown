@@ -67,3 +67,5 @@ jekyll تنظیمات بسیار زیادی داره که می تونید تمو
 </ul>
 
 <a href="http://iakrami.ir/tutorial/installing-jekyll-on-windows-part2.html">آموزش نصب jekyll بر روی ویندوز (قسمت دوم)</a>
+
+<a href="http://iakrami.ir/tutorial/installing-jekyll-on-windows-part3.html">آموزش نصب jekyll بر روی ویندوز (قسمت سوم)</a>

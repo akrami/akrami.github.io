@@ -50,3 +50,5 @@ github: [Repository metadata]
 </ul>
 
 در پست بعد اتصال دامنه به github رو آموزش خواهم داد. لطفا نظرات و سوالاتتون رو در مورد این پست در قسمت نظرات عنوان کنید.
+
+<a href="http://iakrami.ir/tutorial/installing-jekyll-on-windows-part3.html">آموزش نصب jekyll بر روی ویندوز (قسمت سوم)</a>
