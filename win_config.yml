@@ -1,0 +1,18 @@
+# Site settings
+title: علیرضا اکرمی
+email: alireza.akrami[at]outlook.com
+description: > # this means to ignore newlines until "baseurl:"
+  نوشته های من در مورد وب، طراحی، برنامه نویسی و ...
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://iakrami.ir" # the base hostname & protocol for your site
+twitter_username: xarax
+github_username:  akrami
+facebook_username: xarax
+
+# Build settings
+encoding: utf-8
+markdown: kramdown
+safe: true
+lsi: false
+permalink: none
+highlighter: rouge
