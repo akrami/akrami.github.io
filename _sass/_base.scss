@@ -23,7 +23,7 @@ body {
     font-family: $base-font-family;
     font-size: $base-font-size;
     line-height: $base-line-height;
-    font-weight: 300;
+    font-weight: 200;
     color: $text-color;
     background-color: $background-color;
 }
@@ -50,6 +50,10 @@ img {
     vertical-align: middle;
 }
 
+.post-list img {
+    
+    margin: 15px 5px;
+}
 
 
 /**
@@ -85,7 +89,7 @@ li {
  * Headings
  */
 h1, h2, h3, h4, h5, h6 {
-    font-weight: 300;
+    font-weight: bold;
 }
 
 
@@ -200,7 +204,7 @@ pre {
         display: inline-block;
         width: 16px;
         height: 16px;
-        vertical-align: middle;
+        vertical-align: sub;
 
         path {
             fill: $grey-color;
