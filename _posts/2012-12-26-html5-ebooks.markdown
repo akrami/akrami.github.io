@@ -10,7 +10,7 @@ tags: book ebook learning tutorial html5 css3 آموزش کتاب الکترون
 <div class="container centeralized">
 	<img src="../img/bookshelf.jpg" alt="web design">
 </div>
-HTML5 نسخه جدید از زبان برنامه نویسی HTML است. هدف از ایجاد HTML5 سادگی عناصر چندرسانه‌ای و قالب کد می‌باشد. ویژگی‌های جدید HTML5 و تغییراتی که نسبت به نسخه‌ی پیشین خود داشته است در [پست آشنایی با HTML5](http://iakrami.ir/tutorial/introduction-to-html5.html) عنوان شد. در زیر چندی از کتابهایی که در این زمینه به چاپ رسیده اند عنوان شده است
+HTML5 نسخه جدید از زبان نشانه گذاری HTML است. هدف از ایجاد HTML5 سادگی عناصر چندرسانه‌ای و قالب کد می‌باشد. ویژگی‌های جدید HTML5 و تغییراتی که نسبت به نسخه‌ی پیشین خود داشته است در [پست آشنایی با HTML5](http://iakrami.ir/tutorial/introduction-to-html5.html) عنوان شد. در زیر چندی از کتابهایی که در این زمینه به چاپ رسیده اند عنوان شده است
 
 
 ###[HTML5 & CSS3](http://www.booktolearn.com/?p=586) ###
