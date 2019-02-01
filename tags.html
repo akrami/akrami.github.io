@@ -1,0 +1,19 @@
+---
+layout: persian_layout
+---
+<h2>برچسب ها</h2>
+<div class="tags">
+    {% assign rawtags = "" %}
+    {% assign articles = site.posts | where:'language', 'persian' %}
+    {% for post in articles %}
+        {% assign ttags = post.tags | join:'|' | append:'|' %}
+        {% assign rawtags = rawtags | append:ttags %}
+    {% endfor %}
+    {% assign rawtags = rawtags | split:'|' | sort | uniq %}
+
+    {% for tag in rawtags %}
+        {% if tag != "" and tag != " " %}
+        <a href="/tags/{{tag}}" class="tag">#{{tag}}</a>
+        {% endif %}
+    {% endfor %}
+</div>

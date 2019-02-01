@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% if jekyll.environment == "production" %}
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-112313025-2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-112313025-2');
+    </script>
+    {% endif %}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>404 Not Found</title>
+  <style>
+    #space {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 0;
+      background-color: #0E2430;
+    }
+
+    #space .stars {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      overflow: hidden;
+      background-image:
+        radial-gradient(2px 2px at 20px 30px, #eee, rgba(0, 0, 0, 0)),
+        radial-gradient(1px 1px at 40px 70px, #fff, rgba(0, 0, 0, 0)),
+        radial-gradient(1px 1px at 35px 63px, #fff, rgba(0, 0, 0, 0)),
+        radial-gradient(1px 1px at 259px 176px, #eee, rgba(0, 0, 0, 0)),
+        radial-gradient(2px 2px at 294px 2px, #eee, rgba(0, 0, 0, 0)),
+        radial-gradient(1px 1px at 181px 59px, #eee, rgba(0, 0, 0, 0)),
+        radial-gradient(2px 2px at 61px 97px, #eee, rgba(0, 0, 0, 0)),
+        radial-gradient(1px 1px at 172px 129px, #eee, rgba(0, 0, 0, 0)),
+        radial-gradient(2px 2px at 194px 19px, #eee, rgba(0, 0, 0, 0)),
+        radial-gradient(1px 1px at 272px 185px, #eee, rgba(0, 0, 0, 0)),
+        radial-gradient(2px 2px at 198px 81px, #eee, rgba(0, 0, 0, 0)),
+        radial-gradient(1px 1px at 108px 191px, #eee, rgba(0, 0, 0, 0)),
+        radial-gradient(2px 2px at 212px 62px, #eee, rgba(0, 0, 0, 0)),
+        radial-gradient(1px 1px at 278px 196px, #eee, rgba(0, 0, 0, 0)),
+        radial-gradient(2px 2px at 67px 98px, #eee, rgba(0, 0, 0, 0)),
+        radial-gradient(1px 1px at 161px 159px, #eee, rgba(0, 0, 0, 0)),
+        radial-gradient(2px 2px at 36px 148px, #eee, rgba(0, 0, 0, 0)),
+        radial-gradient(1px 1px at 256px 108px, #eee, rgba(0, 0, 0, 0)),
+        radial-gradient(2px 2px at 90px 91px, #eee, rgba(0, 0, 0, 0)),
+        radial-gradient(1px 1px at 210px 73px, #eee, rgba(0, 0, 0, 0)),
+        radial-gradient(2px 2px at 227px 150px, #eee, rgba(0, 0, 0, 0)),
+        radial-gradient(1px 1px at 270px 180px, #eee, rgba(0, 0, 0, 0)),
+        radial-gradient(2px 2px at 51px 30px, #eee, rgba(0, 0, 0, 0)),
+        radial-gradient(1px 1px at 203px 152px, #eee, rgba(0, 0, 0, 0)),
+        radial-gradient(2px 2px at 112px 58px, #eee, rgba(0, 0, 0, 0)),
+        radial-gradient(1px 1px at 149px 106px, #eee, rgba(0, 0, 0, 0)),
+        radial-gradient(2px 2px at 31px 167px, #eee, rgba(0, 0, 0, 0)),
+        radial-gradient(1px 1px at 80px 55px, #eee, rgba(0, 0, 0, 0)),
+        radial-gradient(2px 2px at 298px 164px, #eee, rgba(0, 0, 0, 0)),
+        radial-gradient(1px 1px at 46px 151px, #eee, rgba(0, 0, 0, 0)),
+        radial-gradient(2px 2px at 69px 146px, #eee, rgba(0, 0, 0, 0)),
+        radial-gradient(1px 1px at 273px 40px, #eee, rgba(0, 0, 0, 0)),
+        radial-gradient(2px 2px at 199px 127px, #eee, rgba(0, 0, 0, 0)),
+        radial-gradient(1px 1px at 249px 102px, #eee, rgba(0, 0, 0, 0)),
+        radial-gradient(2px 2px at 96px 170px, #eee, rgba(0, 0, 0, 0)),
+        radial-gradient(1px 1px at 142px 43px, #eee, rgba(0, 0, 0, 0)),
+        radial-gradient(2px 2px at 291px 53px, #eee, rgba(0, 0, 0, 0)),
+        radial-gradient(1px 1px at 120px 112px, #eee, rgba(0, 0, 0, 0)),
+        radial-gradient(2px 2px at 104px 39px, #eee, rgba(0, 0, 0, 0)),
+        radial-gradient(1px 1px at 221px 83px, #eee, rgba(0, 0, 0, 0)),
+        radial-gradient(2px 2px at 77px 18px, #eee, rgba(0, 0, 0, 0)),
+        radial-gradient(1px 1px at 64px 87px, #eee, rgba(0, 0, 0, 0)),
+        radial-gradient(2px 2px at 234px 130px, #eee, rgba(0, 0, 0, 0)),
+        radial-gradient(1px 1px at 276px 78px, #eee, rgba(0, 0, 0, 0)),
+        radial-gradient(2px 2px at 2px 181px, #eee, rgba(0, 0, 0, 0)),
+        radial-gradient(1px 1px at 164px 116px, #eee, rgba(0, 0, 0, 0)),
+        radial-gradient(2px 2px at 145px 69px, #eee, rgba(0, 0, 0, 0)),
+        radial-gradient(1px 1px at 195px 33px, #eee, rgba(0, 0, 0, 0)),
+        radial-gradient(2px 2px at 27px 182px, #eee, rgba(0, 0, 0, 0)),
+        radial-gradient(1px 1px at 257px 189px, #eee, rgba(0, 0, 0, 0)),
+        radial-gradient(2px 2px at 255px 84px, #eee, rgba(0, 0, 0, 0)),
+        radial-gradient(1px 1px at 89px 65px, #eee, rgba(0, 0, 0, 0)),
+        radial-gradient(2px 2px at 38px 188px, #eee, rgba(0, 0, 0, 0));
+
+
+      background-repeat: repeat;
+      background-size: 300px 200px;
+    }
+
+    #space .planets .mercury {
+      position: absolute;
+      background-color: #908C9A;
+      width: 50px;
+      height: 50px;
+      margin-left: 20%;
+      margin-top: 20%;
+      border-radius: 50%;
+      border: 2px solid #9BB3AF;
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    #space .planets .mercury .hole1 {
+      position: absolute;
+      background-color: #9BB3AF;
+      width: 20px;
+      height: 10px;
+      left: 22px;
+      top: 7px;
+      z-index: 2;
+      border-radius: 50%;
+      transform: rotate(30deg);
+    }
+
+    #space .planets .mercury .hole2 {
+      position: absolute;
+      background-color: #9BB3AF;
+      width: 25px;
+      height: 20px;
+      left: 27px;
+      top: 29px;
+      z-index: 2;
+      border-radius: 50%;
+      transform: rotate(-30deg);
+    }
+
+    #space .planets .mercury .hole3 {
+      position: absolute;
+      background-color: #9BB3AF;
+      width: 15px;
+      height: 13px;
+      left: 6px;
+      top: 20px;
+      z-index: 2;
+      border-radius: 50%;
+      transform: rotate(80deg);
+    }
+
+    #space .planets .mercury .light {
+      position: absolute;
+      background-color: rgba(255, 255, 255, .2);
+      width: 50px;
+      height: 50px;
+      left: -10px;
+      top: -10px;
+      z-index: 2;
+      border-radius: 50%;
+    }
+
+    #space .planets .mars {
+      position: absolute;
+      right: 15%;
+      bottom: 25%;
+      background-color: #E39B7D;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      border: 4px solid #F75D45;
+      overflow: hidden;
+      z-index: 3;
+    }
+
+    #space .planets .mars .hole1 {
+      position: absolute;
+      background-color: #F75D45;
+      width: 75px;
+      height: 20px;
+      left: 30px;
+      top: 0;
+      z-index: 3;
+      border-radius: 20px;
+      transform: rotate(-25deg);
+    }
+
+    #space .planets .mars .hole2 {
+      position: absolute;
+      background-color: #F75D45;
+      width: 75px;
+      height: 20px;
+      left: -10px;
+      top: 50px;
+      z-index: 3;
+      border-radius: 20px;
+      transform: rotate(-25deg);
+    }
+
+    #space .planets .mars .hole3 {
+      position: absolute;
+      background-color: #F75D45;
+      width: 75px;
+      height: 20px;
+      left: 70px;
+      top: 55px;
+      z-index: 3;
+      border-radius: 20px;
+      transform: rotate(-25deg);
+    }
+
+    #space .planets .mars .light {
+      position: absolute;
+      background-color: rgba(255, 255, 255, .2);
+      z-index: 3;
+      width: 100px;
+      height: 100px;
+      left: -20px;
+      top: -20px;
+      border-radius: 50%;
+    }
+
+    #space .planets .jupiter {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      margin-top: -144px;
+      margin-left: -104px;
+      background-color: #A5CCC4;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      border: 8px solid #718F88;
+      overflow: hidden;
+      z-index: 5;
+    }
+
+    #space .planets .jupiter .line1 {
+      position: absolute;
+      background-color: #718F88;
+      width: 200px;
+      height: 20px;
+      top: 10px;
+      z-index: inherit;
+    }
+
+    #space .planets .jupiter .line2 {
+      position: absolute;
+      background-color: #C3B78F;
+      width: 200px;
+      height: 30px;
+      top: 30px;
+      z-index: inherit;
+    }
+
+    #space .planets .jupiter .line3 {
+      position: absolute;
+      background-color: #C09086;
+      width: 200px;
+      height: 60px;
+      top: 60px;
+      z-index: inherit;
+    }
+
+    #space .planets .jupiter .line4 {
+      position: absolute;
+      background-color: #D2667D;
+      width: 200px;
+      height: 40px;
+      top: 120px;
+      z-index: inherit;
+    }
+
+    #space .planets .jupiter .line5 {
+      position: absolute;
+      background-color: #B8A08F;
+      width: 200px;
+      height: 40px;
+      top: 160px;
+      z-index: inherit;
+    }
+
+    #space .planets .jupiter .hole {
+      position: absolute;
+      background-color: #BFFF5E;
+      width: 40px;
+      height: 20px;
+      left: 130px;
+      top: 110px;
+      z-index: inherit;
+      border-radius: 50%;
+    }
+
+    #space .planets .jupiter .light {
+      position: absolute;
+      background-color: rgba(255, 255, 255, .2);
+      width: 200px;
+      height: 200px;
+      z-index: inherit;
+      border-radius: 50%;
+      left: -40px;
+      top: -40px;
+    }
+
+    #space .planets .left4 {
+      position: absolute;
+      font-family: sans-serif;
+      color: #FFFB05;
+      font-weight: bold;
+      font-size: 280px;
+      z-index: 4;
+      left: 50%;
+      top: 50%;
+      margin-left: -225px;
+      margin-top: -160px;
+      transform: rotate(-25deg);
+    }
+
+    #space .planets .right4 {
+      position: absolute;
+      font-family: sans-serif;
+      color: #FFFB05;
+      font-weight: bold;
+      font-size: 280px;
+      z-index: 4;
+      left: 50%;
+      top: 50%;
+      margin-left: 25px;
+      margin-top: -260px;
+      transform: rotate(-25deg);
+    }
+
+    #space .text {
+      position: absolute;
+      z-index: 10;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      text-align: center;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      color: white;
+    }
+
+    #space .text .text1 {
+      font-size: 36px;
+      font-weight: bold;
+      text-transform: uppercase;
+      line-height: 0px;
+    }
+
+    #space .text .text2 {
+      font-size: 24px;
+      font-weight: bold;
+      text-transform: capitalize;
+      line-height: 0px;
+    }
+
+    #space .text .text3 {
+      font-size: 16px;
+      font-weight: normal;
+      text-transform: capitalize;
+    }
+
+    #space .text .text3 a {
+      text-decoration: none;
+      color: #FFFB05;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="space">
+    <div class="stars"></div>
+    <div class="planets">
+      <div class="mercury">
+        <div class="hole1"></div>
+        <div class="hole2"></div>
+        <div class="hole3"></div>
+        <div class="light"></div>
+      </div>
+      <div class="mars">
+        <div class="hole1"></div>
+        <div class="hole2"></div>
+        <div class="hole3"></div>
+        <div class="light"></div>
+      </div>
+      <div class="left4">4</div>
+      <div class="right4">4</div>
+      <div class="jupiter">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+        <div class="line4"></div>
+        <div class="line5"></div>
+        <div class="hole"></div>
+        <div class="light"></div>
+      </div>
+    </div>
+    <div class="text">
+      <p class="text1">Are you lost?</p>
+      <p class="text2">You are not supposed to be here</p>
+      <p class="text3">please visit my <a href="/en">English Homepage</a> or <a href="/">Persian Homepage</a> </p>
+    </div>
+  </div>
+</body>
+
+</html>

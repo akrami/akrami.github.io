@@ -1,0 +1,17 @@
+---
+layout: persian_layout
+---
+<div class="tag-posts">
+    <h2>مطالب دارای برچسب <u>#{{ page.tag }}</u></h2>
+    <br>
+    <table id="old-posts" class="list-unstyled">
+    {% assign articles = site.posts | where:'language', 'persian' %}
+    {% for post in articles %}
+        {% if post.tags contains page.tag %}
+        <tr>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;</td><td><span>{{ post.date-month }} {{ post.date-year }}</span></td><td><a href="{{ post.url }}">{{ post.title }}</a></td>
+        </tr>
+        {% endif %}
+    {% endfor %}
+    </table>
+</div>

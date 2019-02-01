@@ -1,0 +1,31 @@
+---
+layout: persian_layout
+---
+
+<div class="post">
+  <h2 class="post-header posted-header">{{ page.title }}</h2>
+  <div class="post-meta">
+    <div class="post-tags">[ {% for tag in page.tags %} <a href="/tags/{{tag}}" class="post-tag">#{{tag}}</a> {% endfor %} ]</div>
+    <span class="post-date"><i class="fas fa-calendar-alt"></i> {{ page.date-day }} {{ page.date-month }} {{ page.date-year }}</span>
+  </div>
+  <div class="post-content">{{ page.content }}</div>
+</div>
+<div id="commento"></div>
+
+
+{% if jekyll.environment == "production" %}
+<div id="disqus_thread"></div>
+<script>
+  var disqus_config = function () {
+    this.page.url = '{{ page.url | absolute_url }}';
+    this.page.identifier = '{{ page.url | absolute_url }}';
+  };
+  (function() { 
+  var d = document, s = d.createElement('script');
+  s.src = 'https://iakrami.disqus.com/embed.js';
+  s.setAttribute('data-timestamp', +new Date());
+  (d.head || d.body).appendChild(s);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+{% endif %}

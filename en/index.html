@@ -1,0 +1,30 @@
+---
+layout: english_layout
+---
+<div class="posts">
+  {% assign articles = site.posts | where:'language', 'english' %}
+  {% for post in articles limit:5 %}
+  <div class="post">
+    <h2 class="post-header"><a href="{{ post.url }}">{{ post.title }}</a></h2>
+    <div class="post-meta">
+      <div class="post-tags">[ {% for tag in post.tags %} <a href="/en/tags/{{tag}}" class="post-tag">#{{tag}}</a> {% endfor %} ]</div>
+      <div class="post-date">{{ post.date | date: "%b %d, %Y" }}</div>
+    </div>
+    <div class="post-content">{{ post.excerpt }}</div>
+    <div class="post-more clearfix"><a href="{{ post.url }}" class="btn btn-outline-light float-right">Read more...
+        <i class="fas fa-glasses"></i></a></div>
+  </div>
+  {% endfor %}
+  {% if articles.size > 5 %}
+  <h2>Other Articles</h2>
+  <table id="old-posts" class="list-unstyled">
+    {% for post in articles offset:5 %}
+    <tr>
+      <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td><span>{{ post.date | date: "%b" }} {{ post.date | date: "%Y" }}</span></td>
+      <td><a href="{{ post.url }}">{{ post.title }}</a></td>
+    </tr>
+    {% endfor %}
+  </table>
+  {% endif %}
+</div>
