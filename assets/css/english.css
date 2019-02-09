@@ -58,6 +58,10 @@ body::after {
   margin-top: 75px;
 }
 
+#content > .post {
+  margin-top: 150px;
+}
+
 .post {
   margin-bottom: 75px;
   margin-top: 25px;
@@ -122,6 +126,10 @@ body::after {
   margin-top: 15px;
 }
 
+.post-content p {
+  font-size: 1.3em;
+}
+
 .post-content a {
   color: #EDBE5F;
   padding-left: 2px;
@@ -140,6 +148,34 @@ body::after {
   transition: background-color 200ms linear;
 }
 
+.post-content img {
+  max-width: 100%;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.post-content h2,
+.post-content h3,
+.post-content h4,
+.post-content h5 {
+  font-weight: bold;
+}
+
+.post-content h2,
+.post-content h3 {
+  padding-top: 25px;
+}
+
+ul,
+ol {
+  padding-left: 25px;
+}
+
+ul h4,
+ol h4 {
+  margin-left: -25px;
+}
+
 code {
   direction: ltr;
   text-align: left;
@@ -153,7 +189,6 @@ code {
 
 .post .highlight pre {
   padding: 5px;
-  border-radius: 3px;
 }
 
 .post code.highlighter-rouge {

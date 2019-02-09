@@ -15,3 +15,4 @@ encoding: utf-8
 permalink: /:categories/:title
 markdown: kramdown
 timezone: Asia/Tehran
+excerpt_separator: <!--more-->
