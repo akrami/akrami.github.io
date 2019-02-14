@@ -6,9 +6,7 @@ html {
 }
 
 body {
-  background-color: rgb(27,21,31); /*firefox #1B151F*/
-  /* background-color: #131019; //chrome */
-  /* background-color: #17131C; */
+  background-color: rgb(27,21,31);
   color: #F4F4F4;
   font-family: 'Shabnam', 'Roboto';
   position: relative;
@@ -51,10 +49,15 @@ body::after {
 #content-post {
   direction: rtl;
   text-align: right;
+  min-height: 100%;
 }
 
 #content-post {
   margin-top: 75px;
+}
+
+#content > .post {
+  margin-top: 150px;
 }
 
 .post {
@@ -92,7 +95,6 @@ body::after {
   font-family: 'Sahel','Volkhov';
   font-weight: normal;
   font-size: 1em;
-  /* color: #1b151f; */
   color: rgba(237,206,144,1);
   padding: 0 5px;
   background-image: linear-gradient(120deg, #2F3745 0%, #2F3745 100%);
@@ -121,6 +123,10 @@ body::after {
   margin-top: 15px;
 }
 
+.post-content p {
+  font-size: 1.3em;
+}
+
 .post-content a {
   color: #EDBE5F;
   padding-left: 2px;
@@ -139,6 +145,34 @@ body::after {
   transition: background-color 200ms linear;
 }
 
+.post-content img {
+  max-width: 100%;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.post-content h2,
+.post-content h3,
+.post-content h4,
+.post-content h5 {
+  font-weight: bold;
+}
+
+.post-content h2,
+.post-content h3 {
+  padding-top: 25px;
+}
+
+ul,
+ol {
+  padding-right: 25px;
+}
+
+ul h4,
+ol h4 {
+  margin-right: -25px;
+}
+
 code {
   direction: ltr;
   text-align: left;
@@ -152,7 +186,6 @@ code {
 
 .post .highlight pre {
   padding: 5px;
-  border-radius: 3px;
 }
 
 .post code.highlighter-rouge {
@@ -217,6 +250,10 @@ code, kbd, pre, samp {
 #old-posts a:hover {
   text-decoration: none;
   color: #EDBE5F;
+}
+
+.nav-link {
+  text-align: right;
 }
 
 .post-tag {

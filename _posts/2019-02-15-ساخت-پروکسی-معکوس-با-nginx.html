@@ -1,0 +1,229 @@
+---
+layout: post_fa
+title: "ساخت یک پروکسی معکوس با NGINX"
+date:   2019-02-14 06:23:02 +0330
+date-day: ۲۶
+date-month: بهمن
+date-year: ۱۳۹۷
+language: persian
+reference: nginx-reverse-proxy
+tags: [پروکسی, وب‌سرور]
+description: پنهان کردن سرویس های وب پشت یک پروکسی معکوس
+---
+<p>پروکسی سرور یک سرور واسط است که تمامی درخواست ها را به مقاصد مختلف هدایت می کند. سرورهای مقصد درخواست کننده ها را به صورت مستقیم نمی بینند.</p>
+<p>پس از دریافت یک درخواست، سرور پروکسی یک پورت به آن اختصاص می دهد و سپس درخواست را به مقصد ارسال می کند.
+    پس از دریافت پاسخ، جواب درخواست از طریق همان اتصال قبلی به درخواست کننده ارسال می شود.
+</p>
+<!--more-->
+
+<img src="/assets/img/posts/proxy_server.png" alt="proxy server">
+
+<p>بر خلاف پروکسی سرور، یک پروکسی معکوس در کنار وب سرورها قرار می گیرد.
+درخواست کننده ها تمامی وب سرورها و سرویس های پشت پروکسی معکوس را به شکل یک سرور می بینند و توانایی تفکیک آنها را از هم ندارند.
+</p>
+
+<img src="/assets/img/posts/reverse_proxy.png" alt="reverse proxy server">
+
+<p>پروکسی معکوس درخواست ها را به یکی از سرورها ارسال می کند. 
+    پاسخ دریافتی به گونه ای ارسال می شود که هیچ تغییری در آن صورت نپذیرد 
+    با این اختلاف که درخواست کننده متوجه ماهیت سرور پاسخ دهنده نخواهد شد.
+</p>
+
+<ul>
+    <h4>موارد استفاده از پروکسی معکوس:</h4>
+<li>
+    <h5>تقسیم بار</h5>
+    <p>پروکسی معکوس را می توان بعنوان یک تقسیم کننده بار در مقابل سرورها قرار داد؛
+        به گونه ای که حجم درخواست ها بین چندین سرور تقسیم شود.
+         این امر باعث افزایش سرعت و قابلیت پاسخگویی و همچنین اطمینان از عدم اشغال کامل یک سرور می شود.
+         اگر یکی از سرورها پاسخگو نباشد، بار آن بین سرورهای باقیمانده تقسیم می گردد.
+    </p>
+</li>
+<li>
+    <h5>بهبود سرعت وب</h5>
+    <p>پروکسی معکوس می تواند در خواست ها را فشرده کرده تا بار ترافیکی کاهش یابد.
+        علاوه بر فشرده سازی برای کاهش بار می توان از قابلیت cache در پروکسی های معکوس هم استفاده نمود.
+    </p>
+</li>
+<li>
+    <h5>رمزنگاری SSL</h5>
+    <p>رمزنگاری SSL معمولا بر روی وب سرورها انجام نمی شود؛
+        می توان از پروکسی معکوس برای رمزنگاری تمامی درخواست ها استفاده کرد.
+        با استفاده از این امکان، نیازی به تنظیم نمودن SSL بر روی هر سرور به صورت جداگانه نیست.
+    </p>
+</li>
+</ul>
+<h2>نصب NGINX</h2>
+<p>در هنگام نوشتن این پست NGINX بر روی نسخه <code>1.14.2</code>قرار داشت.</p>
+<ol>
+    <h4>CentOS/RHEL:</h4>
+    <li>
+        <p>نصب مخزن EPEL:</p>
+        {% highlight shell %}$ sudo yum install epel-release{% endhighlight %}
+    </li>
+    <li>
+        <p>بروزرسانی مخزن:</p>
+        {% highlight shell %}$ sudo yum update{% endhighlight %}
+    </li>
+    <li>
+        <p>نصب NGINX Open Source:</p>
+        {% highlight shell %}$ sudo yum install nginx{% endhighlight %}
+    </li>
+    <li>
+        <p>اطمینان از نصب:</p>
+        {% highlight shell %}$ sudo nginx -v{% endhighlight %}
+    </li>
+</ol>
+<br>
+<ol>
+    <h4>Debian/Ubuntu:</h4>
+    <li>
+        <p>بروزرسانی مخزن اصلی:</p>
+        {% highlight shell %}$ sudo apt-get update{% endhighlight %}
+    </li>
+    <li>
+        <p>نصب NGINX Open Source:</p>
+        {% highlight shell %}$ sudo apt-get install nginx{% endhighlight %}
+    </li>
+    <li>
+        <p>اطمینان از نصب:</p>
+        {% highlight shell %}$ sudo nginx -v{% endhighlight %}
+    </li>
+</ol>
+
+<p>روش های دیگر نصب و همچنین دیگر سیستم عامل ها را در این لینک پیدا خواهید کرد: <a href="https://docs.nginx.com/nginx/admin-guide/installing-nginx/installing-nginx-open-source/">Installing NGINX Open Source</a></p>
+
+<h2>تنظیمات NGINX</h2>
+<p>فرض کنید بر روی سرور ۲ سرویس وب داریم. یکی با استفاده از apache بر روی پورت ۸۰۸۰؛
+    و دیگری یک سرویس nodejs بر روی پورت ۸۰۹۰.
+</p>
+<p>URLهای سرویس اول به شکل زیر است:</p>
+{% highlight text %}
+http://localhost:8080/login
+http://localhost:8080/home
+http://localhost:8080/assets/css/home.css
+http://localhost:8080/assets/js/home.js
+{% endhighlight %}
+
+<p>و URLهای سرویس دوم:</p>
+{% highlight text %}
+http://localhost:8090/api
+http://localhost:8090/api/getAll
+http://localhost:8090/api/set
+{% endhighlight %}
+
+<p>حال، تنظیمات NGINX را انجام می دهیم. مکان اصلی این فایل  <code>/etc/nginx/nginx.conf</code> می باشد:</p>
+
+{% highlight nginx linenos %}
+server {
+    listen 80;
+    listen [::]:80;
+
+    server_name example.com; 
+}
+{% endhighlight %}
+<p>مقدار <code>example.com</code> را با نام دامنه خود جایگزین کنید.</p>
+<p>سرویس اصلی را بر روی پورت ۸۰ باز کرده ایم(<code>خط 2</code>). حال می بایست قوانین جایگزینی URLها را بنویسیم. خط های زیر را بعد از  <code>server_name</code> اضافه کنید.</p>
+{% highlight nginx linenos %}
+location /app {
+    proxy_pass http://localhost:8080/;
+}
+location /api {
+    proxy_pass http://localhost:8090/api/;
+}
+{% endhighlight %}
+
+<p>اگر URL با <code>/app</code> شروع شود، درخواست به اولین سرویس ارسال می شود.</p>
+{% highlight text %}
+http://localhost/app/login => http://localhost:8080/login
+http://localhost/app/home => http://localhost:8080/home
+http://localhost/api/getAll => http://localhost:8090/api/getAll
+http://localhost/app/xxxx => http://localhost:8080/xxxx
+http://localhost/api/xxxx => http://localhost:8090/api/xxxx
+{% endhighlight %}
+
+<h2>تنظیمات پیشرفته</h2>
+<p>برنامه های بر خط هیج یک از داده های خود را cache نمی کنند،پس بهتر است در پروکسی معکوس هم این قابلیت غیرفعال شود.</p>
+{% highlight nginx linenos %}
+location /api {
+    proxy_pass http://localhost:8090/api/;
+    proxy_buffering off;
+}
+{% endhighlight %}
+<p>برای اضافه کردن اطلاعات اضافی به header درخواست از نمونه کد زیر استفاده می کنیم:</p>
+{% highlight nginx linenos %}
+location /app {
+    proxy_pass http://localhost:8080/;
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header Host $host;
+}
+{% endhighlight %}
+<p>با استفاده از متغیر <code>$remote_addr</code> می توان IP درخواست دهنده را به سرور تحویل داد.</p>
+
+<p>همچنین مثل قطعه کد زیر می توان از regular expressionها در قسمت location استفاده نمود:</p>
+{% highlight nginx linenos %}
+location  ~ ^/app/css/(.*)$ {
+    proxy_pass   http://localhost:8080/assets/css/$1;
+}
+{% endhighlight %}
+{% highlight text %}
+http://localhost/app/css/home.css => http://localhost:8080/assets/css/home.css
+{% endhighlight %}
+<p>همچنین استفاده از <code>rewrite</code>:</p>
+{% highlight nginx linenos %}
+location  /app/ {
+    rewrite    ^/app/dashboard/(.*)$ /app/home?path=$1 break;
+    proxy_pass   http://localhost:8080/;
+}
+{% endhighlight %}
+
+{% highlight text %}
+http://localhost/app/dashboard/addUser => http://localhost:8080/home?path=addUser
+http://localhost/app/assets/css/home.css => http://localhost:8080/assets/css/home.css
+{% endhighlight %}
+
+<h3>استفاده از تقسیم بار در NGINX</h3>
+<p>سرورهایی که بار بین آنها تقسیم می شود را به صورت زیر تعریف می کنیم:</p>
+{% highlight nginx linenos %}
+upstream backend {
+    server 10.1.0.101; 
+    server 10.1.0.102;
+    server 10.1.0.103;
+}
+{% endhighlight %}
+<p>حال می توان در قسمت <code>location</code> از این قابلیت استفاده نمود:</p>
+{% highlight nginx linenos %}
+server {
+    listen 80; 
+ 
+    location / {
+       proxy_pass http://backend;
+    }
+}
+{% endhighlight %}
+
+<h3>رمزنگاری SSL</h3>
+<p>ابتدا فایل های certification را به صورت زیر تعریف می کنیم:</p>
+{% highlight nginx linenos %}
+http {
+    ssl_certificate     /root/certs/example.com/example.com.crt;
+    ssl_certificate_key /root/certs/example.com/example.com.key;
+    ssl_ciphers         EECDH+AESGCM:EDH+AESGCM:AES256+EECDH:AES256+EDH;
+    ssl_protocols       TLSv1.1 TLSv1.2;
+{% endhighlight %}
+
+<p>حال با قطعه کد زیر SSL بر روی سرویس ها فعال می شود:</p>
+{% highlight nginx linenos %}
+server {
+    listen              203.0.113.30:443 ssl;
+    listen              [2001:DB8::5]:443 ssl;
+    server_name         example1.com www.example1.com;
+    root                /var/www/example1.com;
+}
+server {
+    listen              203.0.113.40:443 ssl;
+    listen              [2001:DB8::6]:443 ssl;
+    server_name         example2.com www.example2.com;
+    root                /var/www/example2.com;
+}
+{% endhighlight %}
