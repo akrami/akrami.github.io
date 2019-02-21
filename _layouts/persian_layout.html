@@ -35,7 +35,7 @@
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg" id="main-menu{% if page.layout == "post_fa" %}-post{% endif %}">
+  <nav class="navbar navbar-expand-lg" id="main-menu">
     <a class="navbar-brand" href="/">{{ site.title }}</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -55,9 +55,15 @@
       </ul>
     </div>
   </nav>
-  {% if page.layout != "post_fa" %}
-  <img src="/assets/img/header3.png" alt="" class="img-fluid">
-  {% endif %}
+  <div class="background">
+    <div class="background-shapes">
+      <div class="background-shape1"></div>
+      <div class="background-shape2">
+        <div class="background-sun"></div>
+      </div>
+      <div class="background-snow"></div>
+    </div>
+  </div>
   <div id="content" class="container">
     {{ content }}
   </div>
@@ -70,6 +76,7 @@
   </div>
   <script src="/assets/js/jquery-3.3.1.min.js" charset="utf-8"></script>
   <script src="/assets/js/bootstrap.min.js" charset="utf-8"></script>
+  <script src="/assets/js/scripts.js" charset="utf-8"></script>
 </body>
 
 </html>

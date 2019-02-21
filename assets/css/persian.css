@@ -23,6 +23,66 @@ body::after {
   font-family: 'Sahel'
 }
 
+.background {
+  position: relative;
+  height: 400px;
+  z-index: -5;
+}
+
+.background-shapes {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 400px;
+}
+
+.background-shape1 {
+  position: absolute;
+  top: -600px;
+  left: 0;
+  right: 0;
+  height: 600px;
+  background-color: #309292;
+  transform: skewY(30deg);
+  z-index: -3;
+}
+
+.background-shape2 {
+  position: absolute;
+  top: -400px;
+  left: 0;
+  right: 0;
+  height: 600px;
+  background-color: #309292;
+  transform: skewY(-20deg);
+  z-index: -3;
+  overflow: hidden;
+}
+
+.background-snow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 170px;
+    background-color: whitesmoke;
+    transform: skewY(2deg);
+    z-index: -4;
+}
+
+.background-sun {
+  position: absolute;
+  top: 400px;
+  left: 20%;
+  width: 200px;
+  height: 200px;
+  background-color: #FFB914;
+  border-radius: 50%;
+  transform: skewY(20deg);
+  z-index: -3;
+}
+
 #main-menu {
   position: absolute;
   top: 0;
@@ -50,14 +110,7 @@ body::after {
   direction: rtl;
   text-align: right;
   min-height: 100%;
-}
-
-#content-post {
-  margin-top: 75px;
-}
-
-#content > .post {
-  margin-top: 150px;
+  position: relative;
 }
 
 .post {
@@ -250,10 +303,6 @@ code, kbd, pre, samp {
 #old-posts a:hover {
   text-decoration: none;
   color: #EDBE5F;
-}
-
-.nav-link {
-  text-align: right;
 }
 
 .post-tag {
