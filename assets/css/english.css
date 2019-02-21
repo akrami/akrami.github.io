@@ -307,6 +307,7 @@ code, kbd, pre, samp {
 
 .nav-link {
   text-align: right;
+  text-shadow: 1px 1px 0 #444;
 }
 
 .post-tag {
