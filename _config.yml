@@ -1,18 +1,15 @@
 excerpt_separator: <!--more-->
-title: علیرضا اکرمی
-title-fa: علیرضا اکرمی
-title-en: Alireza Akrami
+title: Alireza Akrami
 email: alireza.akrami@outlook.com
 description: >- 
   
 baseurl: ""
-url: "http://iakrami.ir"
-twitter_username: xarax
-github_username:  akrami
+url: "https://alireza.akrami.io"
+twitter_username: alireza_tech
+github_username: akrami
 
 safe: true
 encoding: utf-8
 permalink: /:categories/:title
 markdown: kramdown
-timezone: Asia/Tehran
-excerpt_separator: <!--more-->
+timezone: Europe/Berlin

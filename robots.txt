@@ -1,4 +1,4 @@
 User-agent: * 
 Allow: /
 
-sitemap: https://iakrami.ir/sitemap.xml
+sitemap: https://alireza.akrami.io/sitemap.xml

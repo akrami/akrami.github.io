@@ -1,4 +1,3 @@
-@import "fonts/fonts.css";
 @import "highlighter.css";
 
 html {
@@ -8,7 +7,7 @@ html {
 body {
   background-color: rgb(27,21,31);
   color: #F4F4F4;
-  font-family: 'Shabnam', 'Roboto';
+  font-family: 'Roboto';
   position: relative;
   min-height: 100%;
 }
@@ -17,10 +16,6 @@ body::after {
   content: '';
   display: block;
   height: 100px;
-}
-
-.sahel {
-  font-family: 'Sahel'
 }
 
 .background {
@@ -92,7 +87,7 @@ body::after {
 
 #main-menu .navbar-brand,
 #main-menu-post .navbar-brand {
-  font-family: 'Sahel', 'Volkhov';
+  font-family: 'Volkhov';
   font-weight: bold;
   font-size: 2em;
 }
@@ -145,7 +140,7 @@ body::after {
 }
 
 .post-header a {
-  font-family: 'Sahel','Volkhov';
+  font-family: 'Volkhov';
   font-weight: normal;
   font-size: 1em;
   color: rgba(237,206,144,1);
@@ -158,7 +153,7 @@ body::after {
 }
 
 .post-header.posted-header {
-  font-family: 'Sahel','Volkhov';
+  font-family: 'Volkhov';
   font-weight: normal;
   font-size: 2em;
   /* color: #1b151f; */
