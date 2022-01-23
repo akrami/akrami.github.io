@@ -1,0 +1,20 @@
+---
+layout: layout
+---
+
+<div class="post">
+  <h2 class="post-header fs-2 fw-bold link-dark">{{ page.title }}</h2>
+  <div class="post-meta d-flex justify-content-between mb-3 mt-3">
+    <div class="post-date text-black-50">{{ page.date | date: "%b %d, %Y" }}</div>
+    <div class="post-tags">{% for tag in page.tags %} <a href="/blog/tags/{{tag}}" class="post-tag badge bg-light text-dark text-decoration-none align-top">{{tag}}</a> {% endfor %}</div>
+  </div>
+  <div class="post-content fs-5 lh-base">{{ page.content }}</div>
+</div>
+
+<script src="https://utteranc.es/client.js"
+        repo="akrami/akrami.github.io"
+        issue-term="pathname"
+        theme="github-dark"
+        crossorigin="anonymous"
+        async>
+</script>
