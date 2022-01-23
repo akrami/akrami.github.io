@@ -20,7 +20,7 @@
     {% for tag in rawtags %}
         {% if tag != "" and tag != " " %}
         <url>
-            <loc>https://iakrami.ir/en/tags/{{tag}}</loc>
+            <loc>https://alireza.akrami.io/blog/tags/{{tag}}</loc>
         </url>
         {% endif %}
     {% endfor %}
