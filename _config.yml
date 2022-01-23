@@ -5,7 +5,8 @@ description: >-
   
 baseurl: ""
 url: "https://alireza.akrami.io"
-twitter_username: alireza_tech
+twitter_username: alirezatech
+linkedin_username: iakrami
 github_username: akrami
 
 safe: true
