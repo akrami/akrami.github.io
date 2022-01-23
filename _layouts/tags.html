@@ -2,15 +2,16 @@
 layout: layout
 ---
 <div class="tag-posts">
-    <h2>Posts with <u>#{{ page.tag }}</u> tag</h2>
+    <h2 class="serif">Posts with <span class="badge bg-light text-dark">{{ page.tag }}</span> tag</h2>
     <br>
     <table id="old-posts" class="list-unstyled">
-    {% for post in site.posts %}
+        {% for post in site.posts %}
         {% if post.tags contains page.tag %}
         <tr>
-            <td>&nbsp;&nbsp;&nbsp;&nbsp;</td><td><span>{{ post.date | date: "%b %Y" }}</span></td><td><a href="{{ post.url }}">{{ post.title }}</a></td>
+            <td class="pe-3"><span class="badge bg-secondary monospace align-top">{{ post.date | date: "%b %Y" }}</span></td>
+            <td><a href="{{ post.url }}" class="link-dark text-decoration-none fs-5 fw-bold serif">{{ post.title }}</a></td>
         </tr>
         {% endif %}
-    {% endfor %}
+        {% endfor %}
     </table>
 </div>

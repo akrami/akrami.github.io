@@ -2,5 +2,15 @@
 layout: layout
 ---
 
-<center>
-<h2>Welcome!</h2></center>
+<div class="text-center serif">
+    <h2 class="fw-bold">Hi 👋, I'm Alireza</h2>
+    <h4>I'm a PHP developer,<br />and also interested in Linux, and DevOps.</h4>
+</div>
+<div class="mt-5 pt-5">
+    <h4 class="fs-4">Posts</h4>
+    {% for post in site.posts %}
+    <h4 class="post-header fs-5">
+        <a href="{{ post.url }}" class="link-secondary text-decoration-none">{{ post.title }}</a>
+    </h4>
+    {% endfor %}
+</div>
