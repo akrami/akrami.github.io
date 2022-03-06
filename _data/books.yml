@@ -13,3 +13,28 @@
   cover: "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1442002359l/25791488._SX318_.jpg"
   author: "Peter Kim"
 
+- title: "Spam Nation: The Inside Story of Organized Cybercrime \u2014 from Global Epidemic to Your Front Door"
+  link: "https://www.goodreads.com/review/show/4234072599?utm_medium=api&utm_source=rss"
+  cover: "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1404480790l/18509663.jpg"
+  author: "Brian Krebs"
+
+- title: "PHP: The \"Right\" Way"
+  link: "https://www.goodreads.com/review/show/3485107064?utm_medium=api&utm_source=rss"
+  cover: "https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png"
+  author: "Josh Lockhart"
+
+- title: "Deploying PHP Applications"
+  link: "https://www.goodreads.com/review/show/1879813755?utm_medium=api&utm_source=rss"
+  cover: "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1468343693l/31067092._SX318_.jpg"
+  author: "Niklas Modess"
+
+- title: "Clean Code: A Handbook of Agile Software Craftsmanship"
+  link: "https://www.goodreads.com/review/show/4129635670?utm_medium=api&utm_source=rss"
+  cover: "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1596157778l/6607720._SX318_.jpg"
+  author: "Robert C. Martin"
+
+- title: "Ansible for DevOps"
+  link: "https://www.goodreads.com/review/show/4541060930?utm_medium=api&utm_source=rss"
+  cover: "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1444973445l/27111284._SX318_.jpg"
+  author: "Jeff Geerling"
+
