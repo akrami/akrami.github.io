@@ -14,7 +14,9 @@ jobs:
         with:
           ruby-version: 2.6
       - name: Fetch books
-        run: ruby books.rb
+        run: |-
+          gem install nokogiri
+          ruby books.rb
       - name: Commit and push if changed
         run: |-
           git diff
