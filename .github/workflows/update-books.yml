@@ -1,0 +1,27 @@
+name: Update README.md
+
+on:
+  push:
+    branches:
+      - master
+  schedule:
+    - cron: "0 5 * * *"
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/cache@v2
+      - uses: ruby/setup-ruby@v1.99.0
+      - name: Fetch books
+        run: ruby books.rb
+      - name: Commit and push if changed
+        run: |-
+          git diff
+          git config --global user.email "alireza@akrami.io"
+          git config --global user.name "alireza-action"
+          git pull
+          git add -A
+          git commit -m "Daily: update README.md" || exit 0
+          git push

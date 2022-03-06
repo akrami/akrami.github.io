@@ -14,3 +14,20 @@ layout: layout
     </h4>
     {% endfor %}
 </div>
+
+<div class="mt-5 pt-5">
+    <h4 class="fs-4">My Tech Library</h4>
+    <div class="d-flex flex-row flex-wrap">
+        {% for book in site.data.books %}
+        <div class="book card d-inline-block overflow-hidden border-0 rounded-0 m-1">
+            <a href="{{ book.link }}" target="_blank">
+                <img src="{{ book.cover }}" alt="{{ book.title }} cover" class="card-img rounded-0">
+                <div class="card-img-overlay text-center p-2 bg-light rounded-0" style="--bs-bg-opacity: .7;">
+                    <div class="title card-text serif fw-bold text-dark">{{ book.title }}</div>
+                    <div class="author card-text sans-serif fs-6 fw-light text-black-50">{{ book.author }}</div>
+                </div>
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+</div>

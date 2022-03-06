@@ -46,3 +46,18 @@ body,
   padding-right: 10px;
   padding-left: 5px;
 }
+
+.book .card-img {
+  width: 120px;
+  height: 160px;
+}
+
+@keyframes fadeout {
+  0% {opacity: 1;}
+  100% {opacity: 0;}
+}
+
+.book:hover .card-img-overlay {
+  animation: fadeout ease-out 300ms;
+  opacity: 0;
+}
