@@ -1,4 +1,4 @@
-name: Update README.md
+name: Update Books
 
 on:
   schedule:
@@ -9,7 +9,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/cache@v2
       - uses: ruby/setup-ruby@v1.99.0
       - name: Fetch books
         run: ruby books.rb
@@ -20,5 +19,5 @@ jobs:
           git config --global user.name "alireza-action"
           git pull
           git add -A
-          git commit -m "Daily: update README.md" || exit 0
+          git commit -m "Daily: update books" || exit 0
           git push
