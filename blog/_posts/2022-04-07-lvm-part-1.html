@@ -1,0 +1,60 @@
+---
+layout: post
+title: "Linux & LVM (Part 1): What is LVM?"
+date: 2022-04-07 21:00:00 +0100
+language: english
+reference: lvm-part-1
+tags: [linux, hardware, administration]
+description: Learn about LVM and its advantages to manage disk spaces
+---
+<p>
+    Disk space management is always a frustrating job.
+    The situation would become even more challenging when one of your partitions on a disk runs out of space.
+    Here the LVM comes to the rescue.
+</p>
+<p>
+    Logical Volume Manager (LVM) is used to manage storage devices, by utilizing the kernel’s device mapper feature to provide an additional layer of abstraction on the underlying physical disk layout.
+    This makes the disk space management very flexible and provides many features, like the ability to add space to a logical volume even when the filesystems are mounted and active.
+</p>
+<!--more-->
+
+<h3>LVM Architecture</h3>
+<p>
+    The LVM deals with the physical disk problems by adding another layer between the physical block device and the filesystem.
+    The concept is that you choose a set of physical volumes to put into a volume group, which functions as a sort of general data pool.
+    In the next step, you make logical volumes out of the volume group that you have.
+</p>
+<ul>
+    <li>
+        <b>PV</b>: The underlying physical storage unit, such as a partition or entire disk, that is configured as an LVM <i>physical volume</i>.
+        This is the most fundamental layer in the LVM architecture.
+    </li>
+    <li>
+        <b>VG</b>: A <i>volume group</i> is formed by combining all of the physical volumes.
+        Thus, a collection of disk space becomes available for use in the creation of new volumes.
+    </li>
+    <li>
+        <b>LV</b>: LVM <i>logical volumes</i> are formed by allocating disk space from the volume group (VG) to them.
+        Each VG has one or more LVs.
+        A logical volume is used by file systems and applications exactly like old school physical partitions.
+    </li>
+</ul>
+<img src="/assets/img/posts/lvm_architecture.png" alt="LVM architecture">
+
+<h3>Advantages</h3>
+<p>
+    The LVM provides some extremely powerful and extremely useful operations, such as:
+    Increase the size of a volume group by adding additional PVs (like adding a new physical disk).
+    Remove PVs as long as there is enough space left in the volume group to handle the logical volumes that are already exist within it.
+    It's possible to change the size of logical volumes, which means that filesystems will also be changed.
+    The <code>fsadm</code> utility can be used to do this.
+    All of this can be done with no need to restart the computer, and in most cases no need to unmount any filesystems.
+    Although adding new physical disk hardware may require a system shutdown, cloud computing environments quite often allow you to add new block storage devices on the fly, making LVM an excellent choice for systems that require this level of flexibility.
+</p>
+
+<h3>Disadvantages</h3>
+<p>
+    In terms of drawbacks, LVM is most notable for adding yet another layer to the storage system.
+    However, while the overhead of LVM is typically small, any reduction in performance on a busy system can be disastrous.
+    While the ability to resize logical volumes is extremely useful, it is necessary to resize the file systems that are installed on them separately.
+</p>

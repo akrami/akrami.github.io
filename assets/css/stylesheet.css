@@ -61,3 +61,21 @@ body,
   animation: fadeout ease-out 300ms;
   opacity: 0;
 }
+
+h1,
+h2,
+h3 {
+  font-family: 'Merriweather', serif;
+  margin-top: 1em;
+}
+
+.post-header-img {
+  height: 203px;
+  position: relative;
+  background-repeat: no-repeat;
+}
+
+.post-header-img a {
+  position: absolute;
+  bottom: 30px;
+}
