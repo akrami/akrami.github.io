@@ -6,11 +6,11 @@ layout: layout
   {% assign header_path = page.reference  | prepend: '/assets/img/header/' | append: ".svg" %}
   {% assign file_exists = site.static_files | where: "path", header_path %}
   {% if file_exists.size != 0 %}
-    <h2 class="post-header-img fs-2 fw-bold" style="background-image: url({{ header_path }});">
+    <h1 class="post-header-img" style="background-image: url({{ header_path }});">
       <a href="{{ page.url }}" class="link-dark text-decoration-none">{{ page.title }}</a>
-    </h2>
+    </h1>
   {% else %}
-    <h2 class="post-header fs-2 fw-bold"><a href="{{ page.url }}" class="link-dark text-decoration-none">{{ page.title }}</a></h2>
+    <h1 class="post-header"><a href="{{ page.url }}" class="link-dark text-decoration-none">{{ page.title }}</a></h1>
   {% endif %}
   <div class="post-meta d-flex justify-content-between mb-3 mt-3">
     <div class="post-date text-black-50">{{ page.date | date: "%b %d, %Y" }}</div>
@@ -19,10 +19,17 @@ layout: layout
   <div class="post-content fs-5 lh-base">{{ page.content }}</div>
 </div>
 
-<script src="https://utteranc.es/client.js"
-        repo="akrami/akrami.github.io"
-        issue-term="pathname"
-        theme="github-dark"
-        crossorigin="anonymous"
-        async>
+<div class="comment">
+{% if page.comments and jekyll.environment == "production" %}
+<div id="disqus_thread"></div>
+<script>
+    (function() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://alireza-akrami.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
 </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+{% endif %}
+</div>

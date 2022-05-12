@@ -6,6 +6,7 @@ language: english
 reference: lvm-part-1
 tags: [linux, hardware, administration]
 description: Learn about LVM and its advantages to manage disk spaces
+comments: true
 ---
 <p>
     Disk space management is always a frustrating job.
@@ -18,7 +19,7 @@ description: Learn about LVM and its advantages to manage disk spaces
 </p>
 <!--more-->
 
-<h3>LVM Architecture</h3>
+<h2>LVM Architecture</h2>
 <p>
     The LVM deals with the physical disk problems by adding another layer between the physical block device and the filesystem.
     The concept is that you choose a set of physical volumes to put into a volume group, which functions as a sort of general data pool.
@@ -41,7 +42,7 @@ description: Learn about LVM and its advantages to manage disk spaces
 </ul>
 <img src="/assets/img/posts/lvm_architecture.png" alt="LVM architecture">
 
-<h3>Advantages</h3>
+<h2>Advantages</h2>
 <p>
     The LVM provides some extremely powerful and extremely useful operations, such as:
     Increase the size of a volume group by adding additional PVs (like adding a new physical disk).
@@ -52,7 +53,7 @@ description: Learn about LVM and its advantages to manage disk spaces
     Although adding new physical disk hardware may require a system shutdown, cloud computing environments quite often allow you to add new block storage devices on the fly, making LVM an excellent choice for systems that require this level of flexibility.
 </p>
 
-<h3>Disadvantages</h3>
+<h2>Disadvantages</h2>
 <p>
     In terms of drawbacks, LVM is most notable for adding yet another layer to the storage system.
     However, while the overhead of LVM is typically small, any reduction in performance on a busy system can be disastrous.

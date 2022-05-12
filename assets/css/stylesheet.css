@@ -1,6 +1,6 @@
 body,
 .sans-serif {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Inter', sans-serif;
 }
 
 .container {
@@ -14,11 +14,21 @@ body,
 .navbar-brand, 
 .post-header,
 .serif {
-  font-family: 'Merriweather', serif;
+  font-family: 'Lora', serif;
 }
 
 .post-date {
   font-size: 0.9em;
+}
+
+.post-content p {
+  font-family: 'Inter', sans-serif;
+  color: #4c4e67;
+  size: 18px;
+  line-height: 28px;
+  vertical-align: baseline;
+  letter-spacing: normal;
+  word-spacing: 0;
 }
 
 .post-content img {
@@ -28,6 +38,10 @@ body,
 
 .monospace {
   font-family: 'JetBrains Mono', monospace;
+}
+
+figure.highlight {
+  margin: 24px 0 32px 0;
 }
 
 .highlight * {
@@ -40,7 +54,9 @@ body,
 }
 
 .highlight>pre {
-  padding: 5px 15px;
+  padding: 32px 15px;
+  border: none;
+  background-color: #FAFAFA;
 }
 
 .highlight .gutter {
@@ -66,8 +82,31 @@ body,
 h1,
 h2,
 h3 {
-  font-family: 'Merriweather', serif;
+  font-family: 'Lora', serif;
   margin-top: 1em;
+  font-weight: 700;
+  vertical-align: baseline;
+}
+
+h1 {
+  font-size: 44px;
+  line-height: 55px;
+  letter-spacing: -1.1px;
+  word-spacing: 1.1px;
+}
+
+h2 {
+  font-size: 30px;
+  line-height: 36px;
+  letter-spacing: -0.75px;
+  word-spacing: 0.75px;
+}
+
+h3 {
+  font-size: 21px;
+  line-height: 24px;
+  letter-spacing: -0.50px;
+  word-spacing: 0.50px;
 }
 
 .post-header-img {
@@ -79,4 +118,14 @@ h3 {
 .post-header-img a {
   position: absolute;
   bottom: 30px;
+}
+
+.post-sample-header {
+  margin: 8px 0 4px 0;
+  font-weight: 500;
+}
+
+.normal-text-spacing {
+  letter-spacing: normal;
+  word-spacing: normal;
 }

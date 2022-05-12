@@ -1,7 +1,7 @@
 ---
 layout: layout
 ---
-<h2>Tags</h2>
+<h1>Tags</h1>
 <div class="tags">
     {% assign rawtags = "" %}
     {% for post in site.posts %}
@@ -12,7 +12,7 @@ layout: layout
 
     {% for tag in rawtags %}
         {% if tag != "" and tag != " " %}
-        <a href="/blog/tags/{{tag}}" class="tag">#{{tag}}</a>
+        <a href="/blog/tags/{{tag}}" class="btn btn-dark text-light text-decoration-none mb-2">{{tag}}</a>
         {% endif %}
     {% endfor %}
 </div>

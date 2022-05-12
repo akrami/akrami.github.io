@@ -7,11 +7,11 @@ layout: layout
     {% assign header_path = post.reference  | prepend: '/assets/img/header/' | append: ".svg" %}
     {% assign file_exists = site.static_files | where: "path", header_path %}
     {% if file_exists.size != 0 %}
-      <h2 class="post-header-img fs-2 fw-bold" style="background-image: url({{ header_path }});">
+      <h1 class="post-header-img" style="background-image: url({{ header_path }});">
         <a href="{{ post.url }}" class="link-dark text-decoration-none">{{ post.title }}</a>
-      </h2>
+      </h1>
     {% else %}
-    <h2 class="post-header fs-2 fw-bold"><a href="{{ post.url }}" class="link-dark text-decoration-none">{{ post.title }}</a></h2>
+    <h1 class="post-header"><a href="{{ post.url }}" class="link-dark text-decoration-none">{{ post.title }}</a></h1>
     {% endif %}
     <div class="post-meta d-flex justify-content-between mb-3 mt-3">
       <div class="post-date text-black-50">{{ post.date | date: "%b %d, %Y" }}</div>
@@ -21,16 +21,12 @@ layout: layout
     <div class="post-more"><a href="{{ post.url }}" class="text-decoration-none text-success">Read more</a></div>
   </div>
   {% endfor %}
-  {% if articles.size > 5 %}
-  <h2>Other Articles</h2>
-  <table id="old-posts" class="list-unstyled">
+  {% if site.posts.size > 5 %}
+  <h2>Older Articles</h2>
     {% for post in site.posts offset:5 %}
-    <tr>
-      <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
-      <td><span>{{ post.date | date: "%b" }} {{ post.date | date: "%Y" }}</span></td>
-      <td><a href="{{ post.url }}">{{ post.title }}</a></td>
-    </tr>
+    <h3 class="normal-text-spacing fw-normal">
+      <a href="{{ post.url }}" class="link-secondary text-decoration-none">{{ post.title }}</a>
+    </h3>
     {% endfor %}
-  </table>
   {% endif %}
 </div>

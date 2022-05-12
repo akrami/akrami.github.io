@@ -2,16 +2,16 @@
 layout: layout
 ---
 
-<div class="text-center serif">
-    <h2 class="fw-bold">Hi 👋, I'm Alireza</h2>
-    <h4>I'm a PHP developer,<br />and also interested in Linux, and DevOps.</h4>
+<div class="text-center">
+    <h1 class="normal-text-spacing">Hi 👋, I'm Alireza</h1>
+    <h2 class="fw-normal normal-text-spacing">I'm a PHP developer,<br />and also interested in Linux, and DevOps.</h2>
 </div>
 <div class="mt-5 pt-5">
-    <h4 class="fs-4">Posts</h4>
+    <h1>Posts</h1>
     {% for post in site.posts %}
-    <h4 class="post-header fs-5">
+    <h3 class="post-sample-header normal-text-spacing">
         <a href="{{ post.url }}" class="link-secondary text-decoration-none">{{ post.title }}</a>
-    </h4>
+    </h3>
     {% endfor %}
 </div>
 

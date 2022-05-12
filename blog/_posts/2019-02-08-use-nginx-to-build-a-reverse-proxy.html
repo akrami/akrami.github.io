@@ -6,6 +6,7 @@ language: english
 reference: nginx-reverse-proxy
 tags: [proxy, webserver, administration]
 description: hide web servers behind a nginx reverse proxy
+comments: true
 ---
 <p>a proxy server is a mediator server that will forward every request from clients to different destinations. destination server does not see clients directly, so they don't know anything about those clients.</p>
 <p>after accepting a request from a client, the proxy server will assign a port to that request and forwards the request to its destination. after receiving the reply on that port, the response will be forwarded to the client through the previous connection.</p>
@@ -20,7 +21,7 @@ description: hide web servers behind a nginx reverse proxy
 <p>Reverse proxies forward requests to one or more ordinary servers which handle them. The response from the proxy server is returned as if it came directly from the original server, leaving the client with no knowledge of the origin servers.</p>
 
 <ul>
-    <h4>Common Uses For A Reverse Proxy Server:</h4>
+    <h3>Common Uses For A Reverse Proxy Server:</h3>
 <li>
     <h5>Load Balancing</h5>
     <p>A reverse proxy server can act as a load-balancer in front of backend servers and distributing client requests across a group of servers in a manner that maximizes speed and capacity utilization while ensuring none of them is overloaded. If one goes down, the load balancer redirects traffic to the remaining active ones.</p>
@@ -37,7 +38,7 @@ description: hide web servers behind a nginx reverse proxy
 <h2>Installing NGINX</h2>
 <p>as we write this article current version of NGINX is <code>1.14.2</code>.</p>
 <ol>
-    <h4>CentOS/RHEL:</h4>
+    <h3>CentOS/RHEL:</h3>
     <li>
         <p>Install the EPEL repository:</p>
         {% highlight shell %}$ sudo yum install epel-release{% endhighlight %}
@@ -57,7 +58,7 @@ description: hide web servers behind a nginx reverse proxy
 </ol>
 <br>
 <ol>
-    <h4>Debian/Ubuntu:</h4>
+    <h3>Debian/Ubuntu:</h3>
     <li>
         <p>Update the Debian repository information:</p>
         {% highlight shell %}$ sudo apt-get update{% endhighlight %}
@@ -161,7 +162,7 @@ http://localhost/app/dashboard/addUser => http://localhost:8080/home?path=addUse
 http://localhost/app/assets/css/home.css => http://localhost:8080/assets/css/home.css
 {% endhighlight %}
 
-<h3>Using NGINX Load Balancer</h3>
+<h2>Using NGINX Load Balancer</h2>
 <p>Define servers that you want to balance request loads on them:</p>
 {% highlight nginx linenos %}
 upstream backend {
@@ -181,7 +182,7 @@ server {
 }
 {% endhighlight %}
 
-<h3>SSL Encryption With NGINX</h3>
+<h2>SSL Encryption With NGINX</h2>
 <p>First of all define certifications like this:</p>
 {% highlight nginx linenos %}
 http {

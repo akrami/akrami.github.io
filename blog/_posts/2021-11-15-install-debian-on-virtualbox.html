@@ -6,11 +6,12 @@ language: english
 reference: install-debian-virtualbox
 tags: [linux, virtualbox, administration]
 description: learn how to install Debian Linux on a virtual machine in VirtualBox
+comments: true
 ---
 <p>The first step to practice learning Linux or even building your own lab is to install Linux on a virtual machine.</p>
 <p>Here we are going through every step, so we can have a new freshly installed Debian Linux on our machine.</p>
 <!--more-->
-<h3>Step 0: Install VirtualBox</h3>
+<h2>Step 0: Install VirtualBox</h2>
 <p>The easiest way to get an installer for Oracle VirtualBox is to search its name on your favorite search engine. normally the first link is to <code>https://www.virtualbox.org/</code>. Or simply enter this address on your browser.</p>
 <p>On the landing page, you will find a big blue button. Clicking on it will take you to another page which you will find a bunch of links. </p>
 <img src="/assets/img/posts/virtualbox_website_links_page.png" alt="VirtualBox Website Download Links">
@@ -24,12 +25,12 @@ description: learn how to install Debian Linux on a virtual machine in VirtualBo
 	<li>The installation is finished :)</li>
 </ul>
 <p>Now your Oracle VirtualBox Manager is installed and you can run it after clicking on <i>Finish</i>.</p>
-<h3>Step 0.1: Install VirtualBox Extension Pack</h3>
+<h2>Step 0.1: Install VirtualBox Extension Pack</h2>
 <p><i>VirtualBox Extension Pack</i> is one of the necessary extensions for VBox. It enables support for USB 2.0 and USB 3.0 devices, VirtualBox RDP, disk encryption, and some other important features you can use on your virtual machines.</p>
 <p>To install it, go back to the VirtualBox download page. You can find the link to it under <b>Oracle VM VirtualBox Extension Pack</b>. Download it and then run it. Normally the VBox will detect it and will alert you about installing it. But If you could not run it, simply drag it onto the Virtual Box Manager window.</p>
 <p>After aggreeing to install it, you can check it in the 'Preferences...' Menu and then the 'Extensions' tab.</p>
 <img src="/assets/img/posts/virtualbox_extensions.png" alt="VirtualBox Extensions Setting">
-<h3>Step 1: Create Your First Virtual Machine</h3>
+<h2>Step 1: Create Your First Virtual Machine</h2>
 <p>With these steps you can easily create your first virtual machine:</p>
 <ul>
 	<li>Click on the <i>New</i> on main menu</li>
@@ -43,7 +44,7 @@ description: learn how to install Debian Linux on a virtual machine in VirtualBo
 	<li>And finally the location and the volume of disk.
 <br><img src="/assets/img/posts/virtualbox_new_third_page.png" alt="VirtualBox Disk Space Allocation"></li>
 </ul>
-<h3>Step 2: Install Debian Linux</h3>
+<h2>Step 2: Install Debian Linux</h2>
 <p>To start the installation we need a Debian Linux image file or disk. We can download the latest version of the Debian Installation disk from <a href="https://cdimage.debian.org/debian-cd/current/amd64/iso-dvd/">https://cdimage.debian.org/debian-cd/current/amd64/iso-dvd/</a>. There you will find a file named <code>debian-x.x.x-amd64-DVD-1.iso</code> which shows an image for Debian prepared for DVD.</p>
 <p>Go to your virtual machine's setting and click on 'Storage'. There you will find an option to choose a disk file for optical drive. Click on it and choose your downloaded image file.</p>
 <img src="/assets/img/posts/virtualbox_optical_drive_disk.png" alt="VirtualBox Disk on Optical Drive" />
