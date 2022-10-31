@@ -1,0 +1,25 @@
+name: Update Books
+
+on:
+  workflow_dispatch:
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: ruby/setup-ruby@v1.99.0
+        with:
+          ruby-version: 2.6
+      - name: update tag files
+        run: |-
+          ruby books.rb
+      - name: Commit and push if changed
+        run: |-
+          git diff
+          git config --global user.email "alireza@akrami.io"
+          git config --global user.name "alireza-action"
+          git pull
+          git add -A
+          git commit -m "update tags" || exit 0
+          git push

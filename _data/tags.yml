@@ -56,3 +56,32 @@ javascript:
 kubernetes:
   title: Kubernetes
   description: All posts about Kubernetes
+
+nginx:
+  title: Nginx
+  description: All posts about Nginx administration
+
+cloud:
+  title: Cloud
+  description: All posts about Cloud Infrastructures
+  icon: <i class="fa-solid fa-cloud"></i>
+
+python:
+  title: Python
+  description: All posts about Python programming language
+  icon: <i class="fa-brands fa-python"></i>
+
+jenkins:
+  title: Jenkins
+  description: All posts about Jenkins CI/CD platform
+  icon: <i class="fa-brands fa-jenkins"></i>
+
+aws:
+  title: Amazon Web Service
+  description: All posts about AWS Infrastructure and Services
+  icon: <i class="fa-brands fa-aws"></i>
+
+monitoring:
+  title: Monitoring
+  description: All posts about Monitoring tools
+  icon: <i class="fa-solid fa-chart-simple"></i>
