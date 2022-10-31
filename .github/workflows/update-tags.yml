@@ -13,7 +13,7 @@ jobs:
           ruby-version: 2.6
       - name: update tag files
         run: |-
-          ruby books.rb
+          ruby tags.rb
       - name: Commit and push if changed
         run: |-
           git diff
