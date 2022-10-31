@@ -1,4 +1,4 @@
-name: Update Books
+name: Update Tags
 
 on:
   workflow_dispatch:
