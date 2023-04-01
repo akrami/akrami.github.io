@@ -2,7 +2,7 @@ require 'uri'
 require 'net/http'
 require 'nokogiri'
 
-uri = URI('https://www.goodreads.com/review/list_rss/3102212?key=HxiNKatUexUw4X4hW2lXfUD6yK7M_8iv9cSBPJWvXPu66jL5&shelf=tech')
+uri = URI('https://www.goodreads.com/review/list_rss/3102212?key=9htK1GIRzQgSou2ZmyJ1UTDI37S8PvkV7kI9NXZ8d1U4dzMi&shelf=my-top')
 res = Net::HTTP.get_response(uri)
 parsed = Nokogiri::XML(res.body)
 
