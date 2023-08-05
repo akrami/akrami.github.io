@@ -1,0 +1,136 @@
+---
+layout: post
+title: "Getting Started With Docker"
+date: 2023-08-05 13:00:00 +0100
+language: english
+reference: docker-getting-started
+tags: [docker]
+description: A Beginner's Guide to Docker
+comments: true
+---
+<p>
+In today's tech world, Docker is a total game-changer!
+It's an open-source platform that's turning app development, deployment, and management upside down.
+With containerization magic, Docker makes apps run smoothly across any platform. No more compatibility nightmares!
+Dev and ops teams are having better communication now, thanks to Docker's seamless collaboration.
+And it's not just that – faster development, easy scaling, and integration, you name it!
+</p>
+<!--more-->
+<h2>What's Docker All About?</h2>
+<p>Let's break it down into bite-sized pieces to get started.</p>
+<h3>Containers: Small but Mighty!</h3>
+<p>Think of containers as a perfect little world where your applications can live happily ever after. They include everything your application needs to run smoothly: libraries, dependencies, and all the necessary files. Containers are like tiny ships, sailing smoothly across different environments, be it your local machine or a server in the cloud.</p>
+<h3>Docker vs. Virtual Machines: Battle Royale!</h3>
+<p>Who would win in a fight: Docker or virtual machines (VMs)? Unlike VMs, which bring their whole operating system to the party, Docker containers share the host operating system. This means they consume fewer resources and boot up faster than VMs. Docker's speed and efficiency make it the undisputed heavyweight champ in the container world.</p>
+
+<h2>Docker's Components</h2>
+<h3>Docker Engine and Docker Client</h3>
+<p>The Docker engine is like a behind-the-scenes wizard. It manages all the containers, working in the background. When you tell the Docker client what you want, the engine fulfills your wishes, creating, starting, stopping, or destroying containers.</p>
+<p>Now, the Docker client is the friendly face of Docker. It's like a middleman between you and Docker's inner workings. You use the client's command-line interface (CLI) to talk to Docker. When you issue commands through the CLI, the client communicates with the engine to make things happen.</p>
+<p>Interestingly, the Docker engine and client can work together even if they are on different machines. They can talk to each other over the internet, thanks to Docker's client-server setup.</p>
+<p>But if you're on your own computer, they communicate directly through a Unix socket or a RESTful API, making container management a breeze.</p>
+
+<h3>Docker Image</h3>
+<p>In the world of Docker, an image is like a frozen snapshot of your application, capturing all the essential elements it needs to function seamlessly. These images serve as the foundation for Docker containers, encapsulating all the necessary files, libraries, and dependencies required to run your application efficiently. Imagine them as blueprints that enable you to create a containerized version of your application.</p>
+<p>To acquire Docker images, you have two options: you can either download pre-existing images from Docker Hub, a repository hosting countless ready-to-use images, or you can craft your own custom image from scratch. If you choose the latter, you'll need a special file known as a Dockerfile. This file contains the instructions and ingredients necessary to construct your unique Docker image.</p>
+<p>Once your image is prepared and finalized, you have the flexibility to share it with others or deploy it to various container orchestration platforms, such as Kubernetes.</p>
+<p>One of the remarkable features of Docker images is their exceptional efficiency and portability. Designed for easy transferability, you can run these images on any machine that has Docker installed. It's like having a versatile companion that can seamlessly transition between different environments without a hitch.</p>
+{% highlight shell %}
+$ docker image ls
+
+REPOSITORY                                      TAG          IMAGE ID       CREATED         SIZE
+mongo                                           latest       1f4172d24883   2 months ago    653MB
+redis                                           6.2.7        4b1123a829a1   8 months ago    113MB
+php                                             8.1.13-cli   71906ff07a35   8 months ago    484MB
+{% endhighlight %}
+
+<h3>Docker Container</h3>
+<p>A Docker container assumes a pivotal role as a core component, representing a runtime instantiation of a Docker image.</p>
+<p>Each Docker container shares the host system's underlying OS kernel, endowing them with a lightweight and agile nature. This unique design permits multiple containers to coexist on the same machine, each isolated from the others and operating as an autonomous entity.</p>
+<p>The beauty of Docker containers lies in their expeditious deployment and scalability. Once a Docker image is constructed, it can be rapidly instantiated as a container within seconds, saving valuable time and resources. Additionally, Docker containers are highly replicable and can be easily disseminated across diverse environments, ensuring consistent and seamless portability.</p>
+<p>Such containers possess impressive versatility, capable of operating on any system supporting Docker, facilitating agile application development and confident deployment across various environments, including on-premises and cloud-based platforms.</p>
+{% highlight shell %}
+$ docker container ls
+
+CONTAINER ID   IMAGE           COMMAND                  CREATED       STATUS       PORTS                               NAMES
+5f914895d3bd   jekyll/jekyll   "/usr/jekyll/bin/ent…"   2 hours ago   Up 2 hours   0.0.0.0:4000->4000/tcp, 35729/tcp   interesting_mclean
+{% endhighlight %}
+
+<h3>Docker Network</h3>
+<p>A Docker network is like a virtual party venue for containers. It's a special place where containers can mingle, share information, and collaborate seamlessly. Just think of it as a virtual LAN (Local Area Network) where all your containers get together to have a blast.</p>
+<p>So, how do these containers find each other in this virtual network? Well, Docker creates a bunch of cool networking options for you to choose from. You can pick the default bridge network, where containers can communicate with each other without any extra setup. Or you can go for an overlay network, where containers from different hosts can join, like a massive global conference call.</p>
+<p>Docker also lets you create custom networks, giving you the power to control who can use the network. You can set up a private network, where only a selected group of containers can connect to.</p>
+
+<h3>Docker Volume</h3>
+<p>A Docker volume is like a special storage compartment for containers. It's a way to persistently store and share data between containers and the host system. You can think of it as a designated folder or drive that containers can access and use to store important files, databases, or configuration data.</p>
+<p>The best part about Docker volumes is that they are like a magic bag of holding. Even if you destroy or recreate a container, the data in the volume remains untouched. This means you can update or replace containers without worrying about losing valuable data.</p>
+<p>Docker volumes are super versatile. You can use the default volume, which Docker sets up for you, or create your own custom volumes. Custom volumes give you the freedom to control where the data is stored on the host system.</p>
+<p>Docker volumes also enable seamless data sharing between containers. It's like having a shared drive where multiple containers can collaborate and access the same data. It makes it easy for your containers to work together as a cohesive team.</p>
+
+<h2>Dockerfile</h2>
+<p>A Dockerfile is like a recipe for baking your perfect Docker image. It's a text file containing a series of instructions that tell Docker exactly what to do. With these instructions, you can set up your image's base, add necessary dependencies, configure settings, and copy your application code into the image.</p>
+<p>Think of it as a step-by-step guide, like a cooking recipe, that Docker follows diligently to create your image masterpiece. It's like telling Docker, "Hey, here's how you should build my image, step by step!"</p>
+{% highlight Dockerfile %}
+# syntax=docker/dockerfile:1
+   
+FROM node:18-alpine
+WORKDIR /app
+COPY . .
+RUN yarn install --production
+CMD ["node", "src/index.js"]
+EXPOSE 3000
+{% endhighlight %}
+<p>One of the cool things about Dockerfile is its flexibility. You can customize it to suit your specific needs and preferences. Need a specific version of an application or library? No problem! Just include it in your Dockerfile, and Docker will take care of the rest.</p>
+
+<h2>Docker Compose</h2>
+<p>Docker Compose is like the perfect assistant, simplifying the management of multi-container applications. It's a tool that allows you to define and run your application's services in a single, easy-to-read file.</p>
+<p>With Docker Compose, you can specify the services, networks, and volumes required for your application to run smoothly.</p>
+<p>Setting up a Docker Compose is a breeze. Just create a YAML file, and you're good to go! In this file, you can define all your containers, set their configurations, and even specify the relationships between them. It's like creating a symphony of containers that work together in perfect harmony.</p>
+{% highlight yaml %}
+services:
+  web:
+    image: nginx
+    volumes:
+      - ./nginx/nginx.conf:/tmp/nginx.conf
+    environment: 
+      - FLASK_SERVER_ADDR=backend:9091  
+    command: /bin/bash -c "envsubst < /tmp/nginx.conf > /etc/nginx/conf.d/default.conf && nginx -g 'daemon off;'" 
+    ports:
+      - 80:80
+    depends_on:
+      - backend
+
+  backend:
+    build:
+      context: flask
+      target: builder
+    stop_signal: SIGINT
+    environment:
+      - FLASK_SERVER_PORT=9091
+    volumes:
+      - ./flask:/src
+    depends_on:
+      -  mongo  
+
+  mongo:
+    image: mongo
+{% endhighlight %}
+<p>One of the coolest features of Docker Compose is the ability to spin up your entire application stack with just one command. It's like having a magic wand that brings your whole application to life in an instant.</p>
+{% highlight shell %}
+$ docker compose scale backend=2
+{% endhighlight %}
+
+<h2>Docker Swarm</h2>
+<p>Docker Swarm is like the ultimate party organizer, making container orchestration a breeze. It's a native clustering and scheduling tool that lets you manage multiple Docker hosts as a single, powerful unit.</p>
+<p>Think of it as the conductor of a symphony, coordinating all your Docker hosts to work together harmoniously. With Docker Swarm, you can deploy, manage, and scale your containers effortlessly across a cluster of machines.</p>
+<p>One of the coolest things about Docker Swarm is its fault tolerance. If one of the hosts suddenly decides to take a break, Docker Swarm will automatically redistribute the containers to other healthy hosts, keeping the party going without a hitch.</p>
+<p>You can also scale your services up or down with a simple command, like adjusting the volume on your speakers. Docker Swarm will add or remove containers based on your scaling needs, ensuring your application always runs smoothly, no matter how busy the party gets.</p>
+{% highlight shell %}
+docker stack deploy --compose-file docker-compose.yml stackdemo
+
+Ignoring unsupported options: build
+
+Creating network stackdemo_default
+Creating service stackdemo_web
+Creating service stackdemo_redis
+{% endhighlight %}
