@@ -7,28 +7,6 @@ layout: layout
     <h2 class="fw-normal normal-text-spacing sans-serif">I'm a DevOps Engineer</h2>
     <p>with experience in building and deploying large-scale web applications in a highly available and responsive systems.</p>
 </div>
-<div class="mt-5">
-    <h2>What I've written?</h2>
-    {% for post in site.posts %}
-        {% assign total = forloop.length | times: 1.0 %}
-        {% assign colorIndex = forloop.rindex | divided_by: total | minus: 0.1 %}
-        {% if colorIndex < 0.4 %}
-            {% assign colorIndex = 0.4 %}
-        {% endif %}
-        <a href="{{ post.url }}" class="fw-semibold text-decoration-none" style="color: rgba(0, 0, 0, {{ colorIndex }});"> 
-            {{ post.title }} 
-            {% for tag in post.tags %}
-                {% assign tagIcon = site.data.tags[tag] %}
-                {% if tagIcon.icon %}
-            	    {{ tagIcon.icon }}
-                {% endif %}
-            {% endfor %}
-        </a>
-        {% unless forloop.last %}
-            &nbsp;<i class="fa-solid fa-asterisk" style="color: rgba(0, 0, 0, .1);"></i>&nbsp;
-        {% endunless %}
-    {% endfor %}
-</div>
 
 <div class="mt-5">
     <h2>What I've read recently?</h2>
