@@ -1,0 +1,520 @@
+:root {
+    --bg-color: #faf6f4;
+    --text-dark: #1a1a2e;
+    --accent-orange: #e87c54;
+}
+
+body {
+    font-family: 'Epilogue', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-dark);
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Fraunces', serif;
+}
+
+.navbar {
+    background-color: transparent;
+    padding: 2rem 0;
+}
+
+.navbar-brand {
+    font-family: 'Fraunces', serif;
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: var(--text-dark) !important;
+    line-height: 1.2;
+}
+
+.navbar-nav .nav-link {
+    font-family: 'Epilogue', sans-serif;
+    font-weight: 500;
+    color: var(--text-dark) !important;
+    margin-left: 2.5rem;
+    font-size: 1rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.navbar-nav .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--text-dark);
+    transition: width 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover::after {
+    width: 100%;
+}
+
+.hero-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 4rem 0;
+    position: relative;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.greeting {
+    font-family: 'Epilogue', sans-serif;
+    font-size: 1.75rem;
+    font-weight: 400;
+    margin-bottom: 3rem;
+    color: var(--text-dark);
+}
+
+.hero-title {
+    font-family: 'Fraunces', serif;
+    font-weight: 800;
+    margin-bottom: 0;
+    line-height: 1.1;
+    position: relative;
+}
+
+.title-devops {
+    font-size: clamp(4rem, 12vw, 8rem);
+    color: var(--text-dark);
+    display: block;
+    margin-bottom: -0.5rem;
+    position: relative;
+}
+
+.title-engineer {
+    font-size: clamp(4rem, 12vw, 8rem);
+    color: var(--text-dark);
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    position: relative;
+}
+
+.title-engineer::before {
+    content: '';
+    width: clamp(80px, 10vw, 150px);
+    height: 8px;
+    background-color: var(--text-dark);
+    display: inline-block;
+}
+
+.tagline {
+    font-family: 'Epilogue', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--text-dark);
+    margin-top: 4rem;
+    max-width: 600px;
+}
+
+.work-section {
+    padding: 2rem 0;
+}
+
+.section-title {
+    font-family: 'Fraunces', serif;
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 3rem;
+    text-align: left;
+}
+
+.work-title {
+    text-align: left;
+    top: 2rem;
+    display: block;
+}
+
+.work-card {
+    display: block;
+    background-color: white;
+    border-radius: 1.5rem;
+    padding: 2.5rem;
+    text-decoration: none;
+    border: 3px solid transparent;
+}
+
+.card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.card-title {
+    font-family: 'Fraunces', serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+}
+
+.card-description {
+    font-family: 'Epilogue', sans-serif;
+    font-size: 1.125rem;
+    color: var(--text-dark);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    opacity: 0.8;
+}
+
+.card-link {
+    font-family: 'Epilogue', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--accent-orange);
+    margin-top: auto;
+}
+
+.about-section {
+    padding: 4rem 0;
+}
+
+.about-container {
+    background-color: white;
+    border-radius: 2rem;
+    padding: 4rem;
+}
+
+.about-content {
+    margin-bottom: 3rem;
+}
+
+.about-text {
+    font-family: 'Epilogue', sans-serif;
+    font-size: 1.125rem;
+    line-height: 1.8;
+    color: var(--text-dark);
+    margin-bottom: 1.5rem;
+    opacity: 0.9;
+}
+
+.skills-section {
+    margin-bottom: 2rem;
+}
+
+.skills-title {
+    font-family: 'Fraunces', serif;
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 1.5rem;
+}
+
+.skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.skill-tag {
+    font-family: 'Epilogue', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 500;
+    padding: 0.5rem 1.25rem;
+    background-color: var(--bg-color);
+    color: var(--text-dark);
+    border-radius: 2rem;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.skill-tag:hover {
+    border-color: var(--text-dark);
+}
+
+.experience-timeline,
+.education-section {
+    margin-bottom: 2rem;
+}
+
+.timeline-title {
+    font-family: 'Fraunces', serif;
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 1.5rem;
+}
+
+.timeline-item {
+    margin-bottom: 2rem;
+    padding-left: 1.5rem;
+    border-left: 3px solid var(--accent-orange);
+    position: relative;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -7px;
+    top: 0;
+    width: 12px;
+    height: 12px;
+    background-color: var(--accent-orange);
+    border-radius: 50%;
+}
+
+.timeline-period {
+    font-family: 'Epilogue', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--accent-orange);
+    margin-bottom: 0.25rem;
+}
+
+.timeline-role {
+    font-family: 'Fraunces', serif;
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 0.25rem;
+}
+
+.timeline-company {
+    font-family: 'Epilogue', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 0.25rem;
+}
+
+.timeline-location {
+    font-family: 'Epilogue', sans-serif;
+    font-size: 0.9rem;
+    color: var(--text-dark);
+    opacity: 0.7;
+}
+
+@media (max-width: 768px) {
+    .navbar-nav .nav-link {
+        margin-left: 0;
+        margin-top: 0.5rem;
+    }
+
+    .greeting {
+        font-size: 1.25rem;
+        margin-bottom: 2rem;
+    }
+
+    .tagline {
+        font-size: 1.125rem;
+        margin-top: 2rem;
+    }
+
+    .work-container {
+        padding: 2rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .work-card {
+        padding: 1.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .work-title {
+        position: relative;
+        margin-bottom: 2rem;
+        text-align: center;
+    }
+
+    .card-title {
+        font-size: 1.5rem;
+    }
+
+    .card-description {
+        font-size: 1rem;
+    }
+
+    .about-container {
+        padding: 2rem;
+    }
+
+    .about-text {
+        font-size: 1rem;
+    }
+
+    .skills-title,
+    .timeline-title {
+        font-size: 1.5rem;
+    }
+
+    .timeline-item {
+        margin-bottom: 1.5rem;
+    }
+}
+
+/* Contact Section */
+.contact-section {
+    padding: 6rem 0;
+    min-height: 100vh;
+}
+
+.contact-container {
+    background-color: white;
+    border-radius: 2rem;
+    padding: 4rem;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+.contact-title {
+    text-align: left;
+    margin-bottom: 1.5rem;
+}
+
+.contact-description {
+    font-family: 'Epilogue', sans-serif;
+    font-size: 1.125rem;
+    line-height: 1.8;
+    color: var(--text-dark);
+    opacity: 0.9;
+    margin-bottom: 2.5rem;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-family: 'Epilogue', sans-serif;
+    font-size: 1rem;
+    color: var(--text-dark);
+}
+
+.contact-item i {
+    font-size: 1.5rem;
+    color: var(--accent-orange);
+    width: 30px;
+    flex-shrink: 0;
+}
+
+.contact-item a {
+    color: var(--text-dark);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-item a:hover {
+    color: var(--accent-orange);
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-label {
+    font-family: 'Epilogue', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+}
+
+.form-control {
+    font-family: 'Epilogue', sans-serif;
+    font-size: 1rem;
+    padding: 0.875rem 1.25rem;
+    border: 2px solid var(--bg-color);
+    border-radius: 0.75rem;
+    background-color: var(--bg-color);
+    color: var(--text-dark);
+    transition: all 0.3s ease;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: var(--text-dark);
+    background-color: white;
+    box-shadow: 0 0 0 4px rgba(26, 26, 46, 0.1);
+}
+
+.form-control::placeholder {
+    color: var(--text-dark);
+    opacity: 0.5;
+}
+
+textarea.form-control {
+    resize: vertical;
+    min-height: 150px;
+}
+
+.btn-submit {
+    font-family: 'Epilogue', sans-serif;
+    font-size: 1.125rem;
+    font-weight: 600;
+    padding: 1rem 2.5rem;
+    background-color: var(--text-dark);
+    color: var(--bg-color);
+    border: 2px solid var(--text-dark);
+    border-radius: 3rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    align-self: flex-start;
+}
+
+.btn-submit:hover {
+    background-color: transparent;
+    color: var(--text-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn-submit i {
+    transition: transform 0.3s ease;
+}
+
+.btn-submit:hover i {
+    transform: translateX(5px);
+}
+
+@media (max-width: 992px) {
+    .contact-container {
+        padding: 2rem;
+    }
+
+    .contact-title {
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+
+    .contact-description {
+        text-align: center;
+        font-size: 1rem;
+    }
+
+    .contact-info {
+        margin-bottom: 2rem;
+    }
+
+    .btn-submit {
+        width: 100%;
+        justify-content: center;
+    }
+}
