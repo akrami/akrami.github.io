@@ -1,6 +1,7 @@
 body,
 .sans-serif {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Epilogue', sans-serif;
+  background-color: #faf6f4;
 }
 
 .container {
@@ -11,10 +12,10 @@ body,
   min-height: 100px;
 }
 
-.navbar-brand, 
+.navbar-brand,
 .post-header,
 .serif {
-  font-family: 'Lora', serif;
+  font-family: 'Fraunces', serif;
 }
 
 .post-date {
@@ -22,7 +23,7 @@ body,
 }
 
 .post-content p {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Epilogue', sans-serif;
   color: #4c4e67;
   size: 18px;
   line-height: 28px;
@@ -82,7 +83,7 @@ figure.highlight {
 h1,
 h2,
 h3 {
-  font-family: 'Lora', serif;
+  font-family: 'Fraunces', serif;
   margin-top: 1em;
   font-weight: 700;
   vertical-align: baseline;
