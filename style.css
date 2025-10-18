@@ -356,7 +356,6 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 
-/* Contact Section */
 .contact-section {
     padding: 6rem 0;
     min-height: 100vh;
@@ -366,7 +365,6 @@ h1, h2, h3, h4, h5, h6 {
     background-color: white;
     border-radius: 2rem;
     padding: 4rem;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
 }
 
 .contact-title {
@@ -516,5 +514,110 @@ textarea.form-control {
     .btn-submit {
         width: 100%;
         justify-content: center;
+    }
+}
+
+/* Footer Section */
+.footer-section {
+    background-color: white;
+    padding: 4rem 0 2rem;
+    margin-top: 4rem;
+    border-top: 3px solid var(--bg-color);
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+.footer-brand {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.footer-name {
+    font-family: 'Fraunces', serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin: 0;
+}
+
+.footer-tagline {
+    font-family: 'Epilogue', sans-serif;
+    font-size: 1rem;
+    color: var(--text-dark);
+    opacity: 0.7;
+    margin: 0;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 100%;
+}
+
+.footer-social {
+    display: flex;
+    gap: 1.25rem;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: var(--bg-color);
+    color: var(--text-dark);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 1.25rem;
+}
+
+.social-link:hover {
+    background-color: var(--text-dark);
+    color: var(--bg-color);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.footer-bottom {
+    padding-top: 2rem;
+    border-top: 2px solid var(--bg-color);
+    text-align: center;
+}
+
+.footer-copyright {
+    font-family: 'Epilogue', sans-serif;
+    font-size: 0.9rem;
+    color: var(--text-dark);
+    opacity: 0.6;
+    margin: 0;
+}
+
+@media (max-width: 992px) {
+    .footer-section {
+        padding: 3rem 0 1.5rem;
+    }
+
+    .footer-links {
+        justify-content: center;
+    }
+
+    .footer-brand {
+        text-align: center;
+    }
+
+    .footer-name {
+        font-size: 1.5rem;
+    }
+
+    .footer-tagline {
+        font-size: 0.95rem;
     }
 }
