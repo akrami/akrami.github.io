@@ -81,6 +81,22 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 0;
     line-height: 1.1;
     position: relative;
+    padding: 2rem;
+}
+
+.hero-title::before {
+    content: '';
+    position: absolute;
+    top: 1rem;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('assets/watercolor-1.png');
+    background-repeat: no-repeat;
+    background-position: bottom left;
+    background-size: clamp(200px, 40vw, 600px);
+    transform: rotate(20deg);
+    z-index: -1;
 }
 
 .title-devops {
@@ -134,6 +150,10 @@ h1, h2, h3, h4, h5, h6 {
     text-align: left;
     top: 2rem;
     display: block;
+    background-image: url('assets/watercolor-3.png');
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: clamp(80px, 16vw, 200px);
 }
 
 .work-card {
@@ -178,6 +198,13 @@ h1, h2, h3, h4, h5, h6 {
 
 .about-section {
     padding: 4rem 0;
+}
+
+.about-title {
+    background-image: url('assets/watercolor-2.png');
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: clamp(80px, 16vw, 200px);
 }
 
 .about-container {
@@ -364,6 +391,10 @@ h1, h2, h3, h4, h5, h6 {
 .contact-title {
     text-align: left;
     margin-bottom: 1.5rem;
+    background-image: url('assets/watercolor-4.png');
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: clamp(70px, 14vw, 150px);
 }
 
 .contact-description {
@@ -492,12 +523,12 @@ textarea.form-control {
     }
 
     .contact-title {
-        text-align: center;
+        text-align: left;
         margin-bottom: 1rem;
     }
 
     .contact-description {
-        text-align: center;
+        text-align: left;
         font-size: 1rem;
     }
 
